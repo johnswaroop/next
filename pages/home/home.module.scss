@@ -13,6 +13,7 @@ $mob-width: 85%;
 }
 
 .submitBtn {
+    transition: all 0.85s;
     background-color: var(--bg-panel);
     border: 2.95px solid var(--btn-border);
     font-size: 1.25rem;
@@ -28,10 +29,10 @@ $mob-width: 85%;
         width: 100%;
     }
 
-    
-  &:hover{
-    box-shadow: 0px 0px 25px #6efcdb;
-  }
+    &:hover {
+        transition: all 0.85s;
+        box-shadow: 0px 0px 25px #6efcdb;
+    }
 }
 
 .panelOne {
