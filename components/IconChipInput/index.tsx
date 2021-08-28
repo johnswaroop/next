@@ -33,7 +33,7 @@ const IconChipInput: FC<Props> = ({ title, value, icon }) => {
                     <span className={inFocus ? styles.customBorderFocus : styles.customBorder}>
                         <span></span>
                     </span>
-                    <img src={assets.helpLight} className={styles.help} alt="" onMouseOver={()=>{setToolTipActive(true)}} />
+                    <img src={assets.helpLight} className={styles.help} alt="" onMouseOver={()=>{setToolTipActive(true)}} onMouseLeave={()=>{setTimeout(()=>{setToolTipActive(false)},500)}}/>
                     {toolTipActive && <ToolTip closeToolTip={() => { setToolTipActive(false) }} infoBoxText={infoBoxText} />}
                 </span>
                 

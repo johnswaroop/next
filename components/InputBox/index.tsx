@@ -20,8 +20,7 @@ const InputBox: FC = () => {
         setInFocus(f => !f);
     }
 
-    const infoBoxText: string[] = ['Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sit.', 'new Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sit.',
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sit.', 'new Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sit.'];
+    const infoBoxText: string[] = ['Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sit'];
 
 
     return (
@@ -30,7 +29,7 @@ const InputBox: FC = () => {
             {inPut == ar[0] && <img className={styles.loading} src={assets.loading} alt="" />}
             {inPut == ar[1] && <img className={styles.success} src={assets.success} alt="" />}
             {inPut == ar[2] && <img className={styles.failed} src={assets.failed} alt="" />}
-            {inPut.length <= 0 && <img src={assets.help} alt="" onMouseEnter={() => setToolTipActive(true)} />}
+            {inPut.length <= 0 && <img src={assets.help} alt="" onMouseEnter={() => setToolTipActive(true)} onMouseLeave={()=>{setTimeout(()=>{setToolTipActive(false)},500)}}  />}
             {toolTipActive && <ToolTip closeToolTip={() => { setToolTipActive(false) }} infoBoxText={infoBoxText} />}
         </div>
     );

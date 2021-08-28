@@ -34,15 +34,9 @@ const ToolTip: FC<Props> = ({ closeToolTip, infoBoxText }) => {
         <span className={styles.toolTipCon}>
             <span className={styles.arrow} />
             <div className={styles.toolTip}>
-                <img src={assets.close} className={styles.close} onClick={closeToolTip} />
                 <p className={styles.info}>
                     {infoBoxText[infoIndex]}
                 </p>
-                <span className={styles.infoPagination}>
-                    {(infoIndex > 0) && <img src={assets.prevIcon} className={styles.prev} onClick={prevInfo} />}
-                    {(infoIndex < infoBoxText.length - 1) && <img src={assets.nextIcon} className={styles.next} onClick={nextInfo} />}
-                </span>
-
             </div>
 
         </span >
