@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import assets from '../../assets';
-import styles from './iconChipInput.module.scss'
+import styles from './iconChipInputTime.module.scss'
 import { DateTimePicker, MuiPickersUtilsProvider, } from '@material-ui/pickers';
 import { MuiThemeProvider, createTheme, } from '@material-ui/core'
 import DateFnsUtils from '@date-io/date-fns';
@@ -37,9 +37,9 @@ const IconChipInput: FC<Props> = ({ title, value, icon }) => {
                         <p className={styles.title}>{title}</p>
                         <span className={styles.input}>
                             <DateTimePicker value={selectedDate} onChange={(e: any) => { handleDateChange(e) }} />
-                            {/* <span className={inFocus ? styles.customBorderFocus : styles.customBorder}>
+                            <span className={inFocus ? styles.customBorderFocus : styles.customBorder}>
                                 <span></span>
-                            </span> */}
+                            </span>
                         </span>
                     </span>
 
