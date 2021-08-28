@@ -1,6 +1,6 @@
 @import "./../../scss/variables.scss";
 
-$mob-width : 85%;
+$mob-width: 85%;
 
 .chips {
     display: flex;
@@ -9,7 +9,24 @@ $mob-width : 85%;
     @media only screen and (max-width: 910px) {
         flex-direction: column;
         gap: 2rem;
-       }
+    }
+}
+
+.submitBtn {
+    background-color: var(--bg-panel);
+    border: 2.95px solid var(--btn-border);
+    font-size: 1.25rem;
+    color: var(--btn-color);
+    height: 2.8rem;
+    width: $panel-full-width;
+    font-weight: 550;
+    margin-top: 2.5rem;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+
+    @media only screen and (max-width: 910px) {
+        width: 100%;
+    }
 }
 
 .panelOne {
@@ -17,7 +34,7 @@ $mob-width : 85%;
     animation: appear 0.35s forwards ease-in-out;
     @media only screen and (max-width: 910px) {
         flex-direction: column;
-        width: $mob-width; 
+        width: $mob-width;
         gap: 2rem;
         margin-top: 2rem;
         align-items: center;
@@ -43,7 +60,7 @@ $mob-width : 85%;
     justify-content: space-between;
     margin-top: 2.5rem;
     animation: appear 0.3s forwards ease-in-out;
-    
+
     @media only screen and (max-width: 910px) {
         flex-direction: column;
         width: $mob-width;

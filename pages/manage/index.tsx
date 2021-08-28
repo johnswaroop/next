@@ -197,7 +197,7 @@ const Home: FC = () => {
                 <span className={styles.optional}>
                   <span className={styles.inputOptional}>
                     <p className={styles.inputTitle}>Presale Information</p>
-                    <textarea placeholder={"Enter Information regarding the Presale Information"} />
+                    <textarea placeholder={"Enter Information regarding the Presale Information"} rows={3}/>
                     <span className={styles.customBorder} />
                   </span>
                 </span>

@@ -40,8 +40,8 @@ const Home: FC = () => {
                     <section className={styles.panelTwo}>
                         <PanelFullWidth>
                             <span className={styles.chips}>
-                                <IconChipInput title={"Presale token per BNB rate"} value={"1200"} darkMode={darkMode} />
-                                <IconChipInput title={"PCS tokens per BNB rate"} value={"500"} darkMode={darkMode} />
+                                <IconChipInput title={"Presale rate"} value={"1200"} darkMode={darkMode} />
+                                <IconChipInput title={"Exchange rate"} value={"500"} darkMode={darkMode} />
                                 <IconChipInput title={"Percent towards liquidity"} value={"50" + '%'} darkMode={darkMode} />
                             </span>
                         </PanelFullWidth>
@@ -62,6 +62,10 @@ const Home: FC = () => {
                             <IconChipInputTime title={"End at"} value={"1200"} darkMode={darkMode}  />
                         </PanelVerticle>
                     </section>
+
+                    <button className={styles.submitBtn}>
+                        Submit
+                    </button>
 
                 </Content>
             </div>
