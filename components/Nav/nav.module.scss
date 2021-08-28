@@ -47,13 +47,14 @@
 .walletBtn {
     background-color: var(--bg-panel);
     border: 2.95px solid var(--btn-border);
-    border-radius: 30px;
-    font-size: 1rem;
+    font-size: 0.84rem;
     color: var(--btn-color);
     height: 2rem;
     width: 10rem;
     font-weight: 600;
     margin-right: 1rem;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
 }
 
 .language {
