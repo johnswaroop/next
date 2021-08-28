@@ -68,17 +68,21 @@ const Home: FC = () => {
             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} />
             <div>
                 <Content>
-                {isWalletVisible ? <ConnectWallet/> : null}
+                    {isWalletVisible ? <ConnectWallet /> : null}
                     <SideNav darkMode={darkMode}></SideNav>
                     <div className={styles.list}>
                         <div className={styles.listHeader}>
                             <p>Presale List</p>
-                            <span className={styles.input}>
+                            <span className={styles.inputSearch}>
                                 <input type="text" placeholder={"Search Tokens"} />
                                 <span className={styles.customBorder} />
                             </span>
-                            <span className={styles.input} style={{marginRight:"1.5rem",marginLeft:"auto"}}>
-                                <input type="text" placeholder={"1000"} />
+                            <span className={styles.inputSelect} style={{ marginRight: "1.5rem", marginLeft: "auto" }}>
+                                <select placeholder={"1000"} >
+                                    <option value="100">100</option>
+                                    <option value="100">1000</option>
+                                    <option value="100">10000</option>
+                                </select>
                                 <span className={styles.customBorder} />
                             </span>
                         </div>
