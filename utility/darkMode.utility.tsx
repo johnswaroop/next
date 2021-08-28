@@ -20,7 +20,7 @@ const lightModeStyles: object = {
     '--bg-manage-panel': 'white',
     '--bw-text': 'black',
     '--btn-border': '#00E3AD',
-    '--btn-color':'#00b68a',
+    '--btn-color':'#008162',
     '--bg-panel-grey': '#F9F9F9',
     '--bw-light': 'white',
     '--prog-primary':'#B6EDE0',
