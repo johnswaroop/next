@@ -28,9 +28,9 @@ const Home: FC = () => {
                     <PopUp/>
                     <section className={styles.panelOne}>
                         <PanelFullWidth>
-                            <InputBox />
+                            <InputBox darkMode={darkMode}/>
                             <span className={styles.chips}>
-                                <IconChip title={"Token Name"} value={"10000"} />
+                                <IconChip title={"Token Name"} value={"10000"}/>
                                 <IconChip title={"Token Supply"} value={"10000"} />
                                 <IconChip title={"Initial release date"} value={"10000"} />
                             </span>
@@ -40,26 +40,26 @@ const Home: FC = () => {
                     <section className={styles.panelTwo}>
                         <PanelFullWidth>
                             <span className={styles.chips}>
-                                <IconChipInput title={"Presale token per BNB rate"} value={"1200"} />
-                                <IconChipInput title={"PCS tokens per BNB rate"} value={"500"} />
-                                <IconChipInput title={"Percent towards liquidity"} value={"50" + '%'} />
+                                <IconChipInput title={"Presale token per BNB rate"} value={"1200"} darkMode={darkMode} />
+                                <IconChipInput title={"PCS tokens per BNB rate"} value={"500"} darkMode={darkMode} />
+                                <IconChipInput title={"Percent towards liquidity"} value={"50" + '%'} darkMode={darkMode} />
                             </span>
                         </PanelFullWidth>
                     </section>
 
                     <section className={styles.panelThree}>
                         <PanelVerticle>
-                            <IconChipInput title={"Softcap"} value={"1200"} />
-                            <IconChipInput title={"HardCap"} value={"1200"} />
+                            <IconChipInput title={"Softcap"} value={"1200"} darkMode={darkMode} />
+                            <IconChipInput title={"HardCap"} value={"1200"} darkMode={darkMode}  />
                         </PanelVerticle>
                         <PanelVerticle>
-                            <IconChipInput title={"Min Contribution"} value={"1200"} />
-                            <IconChipInput title={"Max Contribution"} value={"1200"} />
+                            <IconChipInput title={"Min Contribution"} value={"1200"} darkMode={darkMode} />
+                            <IconChipInput title={"Max Contribution"} value={"1200"} darkMode={darkMode} />
                         </PanelVerticle>
                         <PanelVerticle>
                             
-                            <IconChipInputTime title={"Start at"} value={"1200"} />
-                            <IconChipInputTime title={"End at"} value={"1200"} />
+                            <IconChipInputTime title={"Start at"} value={"1200"} darkMode={darkMode}  />
+                            <IconChipInputTime title={"End at"} value={"1200"} darkMode={darkMode}  />
                         </PanelVerticle>
                     </section>
 

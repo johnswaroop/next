@@ -3,7 +3,11 @@ import styles from './inputBox.module.scss'
 import assets from '../../assets';
 import ToolTip from '../ToolTip';
 
-const InputBox: FC = () => {
+interface inputBox{
+    darkMode : boolean
+}
+
+const InputBox: FC<inputBox> = ({darkMode}) => {
 
     const [inFocus, setInFocus] = useState<boolean>(false);
     const [toolTipActive, setToolTipActive] = useState<boolean>(false);
@@ -29,7 +33,7 @@ const InputBox: FC = () => {
             {inPut == ar[0] && <img className={styles.loading} src={assets.loading} alt="" />}
             {inPut == ar[1] && <img className={styles.success} src={assets.success} alt="" />}
             {inPut == ar[2] && <img className={styles.failed} src={assets.failed} alt="" />}
-            {inPut.length <= 0 && <img src={assets.help} alt="" onMouseEnter={() => setToolTipActive(true)} onMouseLeave={()=>{setTimeout(()=>{setToolTipActive(false)},500)}}  />}
+            {inPut.length <= 0 && <img src={darkMode ? assets.help : assets.helpLight} alt="" onMouseEnter={() => setToolTipActive(true)} onMouseLeave={()=>{setTimeout(()=>{setToolTipActive(false)},500)}}  />}
             {toolTipActive && <ToolTip closeToolTip={() => { setToolTipActive(false) }} infoBoxText={infoBoxText} />}
         </div>
     );
