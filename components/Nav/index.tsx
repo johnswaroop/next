@@ -9,10 +9,10 @@ interface Props {
     activeRoute: string,
     darkMode: boolean,
     setDarkMode: any,
-    setIsWalletVisible:any
+    setIsWalletVisible: any
 }
 
-const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode,setIsWalletVisible }) => {
+const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalletVisible }) => {
 
 
 
@@ -48,9 +48,13 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode,setIsWallet
                     <img src={assets.darkMode} /> :
                     <img src={assets.lightMode} />}
             </span>
-            
-            <button className={styles.walletBtn} onClick={()=>{setIsWalletVisible((s:any)=>{return !s})}}>Connect to wallet</button>
-           
+
+            <button className={styles.walletBtn} onClick={() => { setIsWalletVisible((s: any) => { return !s }) }}>Connect to wallet</button>
+
+            <span className={styles.settings} >
+                <img src={assets.settings} />
+            </span>
+
             <button className={styles.language}></button>
         </div>
 

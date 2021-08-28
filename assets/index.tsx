@@ -23,10 +23,11 @@ const twitter:string= './twitter.png'
 const instagram:string= './instagram.png'
 const telegram:string= './telegram.png'
 const bnbCircle:string='./bnbCircle.png'
+const settings:string='./settings.png'
 const w1:string='./w1.png'
 const w2:string='./w2.png'
 const w3:string='./w3.png'
 const w4:string='./w4.png'
 
 
-export default { logo, bnbIcon, loading, success, failed, help, close, nextIcon, prevIcon, lightMode, darkMode, instruction, disclaimer, navIcon1, navIcon2, navIcon3, navIcon1N, navIcon2N, navIcon3N, arrowDown ,facebook,instagram,telegram,twitter,bnbCircle,w1,w2,w3,w4}
+export default { logo, bnbIcon, loading, success, failed, help, close, nextIcon, prevIcon, lightMode, darkMode, instruction, disclaimer, navIcon1, navIcon2, navIcon3, navIcon1N, navIcon2N, navIcon3N, arrowDown ,facebook,instagram,telegram,twitter,bnbCircle,w1,w2,w3,w4,settings}
