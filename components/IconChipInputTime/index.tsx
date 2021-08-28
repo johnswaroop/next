@@ -19,7 +19,7 @@ const theme = createTheme({
 const IconChipInput: FC<Props> = ({ title, value, icon }) => {
 
     const [inFocus, setInFocus] = useState<boolean>(false);
-    const [selectedDate, handleDateChange] = useState();
+    const [selectedDate, handleDateChange] = useState(null);
     const handleFocus = () => {
         setInFocus(f => !f);
     }
