@@ -56,13 +56,16 @@
         position: relative;
         input {
             width: inherit;
+            
             border: none;
             font-size: 0.95rem;
             font-weight: 500;
             margin-top: 0.1rem;
             background: transparent;
-            color: var(--text-color);
 
+            padding-right: 1.25rem;
+            box-sizing: border-box;
+            color: var(--text-color);
             &:focus {
                 outline: none;
             }

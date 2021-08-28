@@ -37,9 +37,9 @@ const IconChipInput: FC<Props> = ({ title, value, icon }) => {
                         <p className={styles.title}>{title}</p>
                         <span className={styles.input}>
                             <DateTimePicker value={selectedDate} onChange={(e: any) => { handleDateChange(e) }} />
-                            <span className={inFocus ? styles.customBorderFocus : styles.customBorder}>
+                            {/* <span className={inFocus ? styles.customBorderFocus : styles.customBorder}>
                                 <span></span>
-                            </span>
+                            </span> */}
                         </span>
                     </span>
 
