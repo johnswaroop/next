@@ -43,12 +43,14 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode,setIsWallet
                     })
                 }
             </ul>
-            <button className={styles.walletBtn} onClick={()=>{setIsWalletVisible((s:any)=>{return !s})}}>Connect to wallet</button>
             <span className={styles.darkModeIcon} onClick={handleDarkMode}>
                 {darkMode ?
                     <img src={assets.darkMode} /> :
                     <img src={assets.lightMode} />}
             </span>
+            
+            <button className={styles.walletBtn} onClick={()=>{setIsWalletVisible((s:any)=>{return !s})}}>Connect to wallet</button>
+           
             <button className={styles.language}></button>
         </div>
 

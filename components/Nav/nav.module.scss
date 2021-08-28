@@ -10,8 +10,8 @@
     position: fixed;
     z-index: 9000;
     @media only screen and (max-width: 910px) {
-        height: $nav-height+1.5vh;
-      }
+        height: $nav-height + 1.5vh;
+    }
 }
 
 .routes {
@@ -33,11 +33,10 @@
     }
 
     @media only screen and (max-width: 910px) {
-        li{
+        li {
             font-size: 1rem;
         }
-      }
-
+    }
 }
 
 .logo {
@@ -46,16 +45,15 @@
 }
 
 .walletBtn {
-    background: var(--bg-wallet);
-    border-radius: 8px;
-    border: none;
-    font-family: $font;
-    color: var(--highlight-text-color);
-    font-weight: 500;
-    height: 60%;
-    padding: 0 1rem;
-    margin-left: auto;
-    font-size: 14px;
+    background-color: var(--bg-panel);
+    border: 2.95px solid var(--btn-border);
+    border-radius: 30px;
+    font-size: 1rem;
+    color: var(--btn-color);
+    height: 2rem;
+    width: 10rem;
+    font-weight: 600;
+    margin-right: 1rem;
 }
 
 .language {
@@ -71,4 +69,6 @@
     display: flex;
     height: 2rem;
     padding-left: 0.5rem;
+    margin-left: auto;
+    margin-right: 1.5rem;
 }
