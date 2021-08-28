@@ -26,7 +26,8 @@ const lightModeStyles: object = {
     '--prog-primary':'#B6EDE0',
     '--prog-primary-dark':'#008162',
     '--prog-sec':'#EDEDED',
-    '--card-btn':'#B6EDE0'
+    '--card-btn':'#B6EDE0',
+    '--hover-glow':'0px 0px 25px #6efcdb'
 }
 
 const darkModeStyles: object = {
@@ -56,7 +57,9 @@ const darkModeStyles: object = {
     '--prog-primary':'#8B6CB9',
     '--prog-primary-dark':'#8B6CB9',
     '--prog-sec':'#110A1D',
-    '--card-btn':'#000000'
+    '--card-btn':'#000000',
+    '--hover-glow':'0px 0px 25px #A05CFE'
+
 }
 
 

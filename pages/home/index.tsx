@@ -17,6 +17,7 @@ const routes: string[] = [];
 const Home: FC = () => {
     const [darkMode, setDarkMode] = useState<boolean>(!false);
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
+    const [clicker,setClicker] = useState(0);
     return (
         <>
             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} />
@@ -63,7 +64,7 @@ const Home: FC = () => {
                         </PanelVerticle>
                     </section>
 
-                    <button className={styles.submitBtn}>
+                    <button className={(clicker<=0) ? styles.submitBtn : styles.submitBtnA} key={clicker} onClick={()=>{setClicker(c=> ++c)}}>
                         Submit
                     </button>
 

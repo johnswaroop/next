@@ -31,9 +31,17 @@ $mob-width: 85%;
 
     &:hover {
         transition: all 0.85s;
-        box-shadow: 0px 0px 25px #6efcdb;
+        box-shadow: var(--hover-glow);
     }
+
+   
 }
+
+.submitBtnA {
+@extend .submitBtn;
+animation: bounce-in 0.7s ease-in-out forwards;
+}
+
 
 .panelOne {
     margin-top: 5rem;
@@ -85,3 +93,22 @@ $mob-width: 85%;
         opacity: 1;
     }
 }
+
+
+
+.bounce-in {
+    animation: bounce-in 2s ease infinite;
+  }
+  @keyframes bounce-in {
+    0% {
+      opacity: 0;
+      transform: scale(.5);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% { transform: scale(.9); }
+    100% { transform: scale(1); }
+  }
+  
