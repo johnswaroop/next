@@ -3,7 +3,7 @@ import { FC } from 'react';
 import styles from './nav.module.scss'
 import assets from '../../assets'
 import darkModeUtility from './../../utility/darkMode.utility'
-
+import LangPicker from '@/components/LangPicker'
 interface Props {
     routes: string[],
     activeRoute: string,
@@ -55,7 +55,7 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
                 <img src={assets.settings} />
             </span>
 
-            <button className={styles.language}></button>
+            <LangPicker></LangPicker>
         </div>
 
     );

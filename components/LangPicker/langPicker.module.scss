@@ -1,0 +1,61 @@
+@import "./../../scss/variables";
+
+.con{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.con:hover .dropDown {display: flex;}
+
+.langPicker{
+    display: flex;
+    height: 2rem;
+    width: 8rem;
+    background-color: black;
+    margin: 0 1rem;
+    border-radius: 50px;
+    background-color: var(--bg-panel);
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.205);
+    align-items: center;
+    padding: 0 1rem;
+    justify-content: space-between;
+    box-sizing: border-box;
+    .flag{
+        width: 1.25rem;
+       object-fit: contain;
+       border-radius: 3px;
+       margin-right: 0.5rem;
+    }
+
+    p{
+        font-family: $font;
+        color: var(--bw-text);
+        font-weight: 400;
+    }
+
+    .arrow{
+        width: 0.75rem;
+        margin-left: 0.5rem;
+    }
+}
+
+.option{
+    @extend .langPicker;
+    margin: 0;
+    box-shadow: none;
+}
+
+.dropDown{
+    display: none;
+    align-items: flex-start;
+    border-radius: 8px;
+    position: absolute;
+    width: 8rem;
+    flex-direction: column;
+    padding: 0.25rem 0;
+    background-color: var(--bg-panel);
+    margin: 0 auto;
+    margin-top: 2.15rem;
+}
