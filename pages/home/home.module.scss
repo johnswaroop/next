@@ -34,13 +34,11 @@ $mob-width: 85%;
         box-shadow: var(--hover-glow);
     }
 
+
+
    
 }
 
-.submitBtnA {
-@extend .submitBtn;
-animation: bounce-in 0.7s ease-in-out forwards;
-}
 
 
 .panelOne {

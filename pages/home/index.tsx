@@ -64,7 +64,7 @@ const Home: FC = () => {
                         </PanelVerticle>
                     </section>
 
-                    <button className={(clicker<=0) ? styles.submitBtn : styles.submitBtnA} key={clicker} onClick={()=>{setClicker(c=> ++c)}}>
+                    <button className={styles.submitBtn} key={clicker} onClick={()=>{setClicker(c=> ++c)}}>
                         Submit
                     </button>
 
