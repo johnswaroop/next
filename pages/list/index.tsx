@@ -5,7 +5,7 @@ import SideNav from '@/components/SideNav';
 import styles from "./list.module.scss";
 import assets from '@/assets';
 import ConnectWallet from '@/components/ConnectWallet'
-
+import { Button } from '@material-ui/core';
 
 const routes: string[] = [];
 
@@ -54,7 +54,7 @@ const Card: FC = () => {
             </div>
             <div className={styles.action}>
                 <p>Starts in 50:00</p>
-                <button>View Presale</button>
+                <Button>View Presale</Button>
             </div>
         </div>
     )
@@ -101,9 +101,9 @@ const Home: FC = () => {
                             </div>
                         </div>
                         <div className={styles.listControl}>
-                            <button className={styles.btn}>Previous</button>
+                        <Button className={styles.btn} color="primary">Previous</Button>
                             <p className={styles.pagination}>Displaying 1 to 8 of 60 Presales</p>
-                            <button className={styles.btn}>Next</button>
+                            <Button className={styles.btn} color="primary">Next</Button>
                         </div>
                     </div>
                 </Content>

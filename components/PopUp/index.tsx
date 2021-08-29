@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FC } from "react";
 import assets from "../../assets";
 import styles from './popUp.module.scss'
+import { Button } from "@material-ui/core";
 
 const PopUp: FC = () => {
 
@@ -38,7 +39,7 @@ const PopUp: FC = () => {
                 </span>
                 <span className={styles.footer}>
                     {(pageindex < 1) && <span><input type="checkbox" /> Never show this Again </span>}
-                    <button onClick={handleBtn}>{btnText[pageindex]}</button>
+                    <Button onClick={handleBtn}>{btnText[pageindex]}</Button>
                 </span>
             </div>
         </div>) : null

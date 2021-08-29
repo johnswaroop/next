@@ -181,7 +181,7 @@ const Home: FC = () => {
                     Your tokens have been deposited click finalize to confirm
                     the process or cancel to abort
                   </p>
-                  <button className={styles.btn}>Finalize</button>
+                  <Button className={styles.btn}>Finalize</Button>
                   <h5>Cancel</h5>
                 </span>
               </CPanel>
@@ -216,7 +216,7 @@ const Home: FC = () => {
                   </span>
                 </span>
                 <span className={styles.save}>
-                  <button className={styles.btn}>Save</button>
+                  <Button className={styles.btn}>Save</Button>
                 </span>
               </CPanel>
             </div>

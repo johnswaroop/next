@@ -6,10 +6,9 @@
     background-color: var(--bg-panel-grey);
     border-radius: 30px;
     flex-direction: column;
-    padding: 2rem 3rem;
+    padding: 1.5rem 2rem;
     box-shadow: 0px 0px 15px rgba(47, 47, 47, 0.25);
-    transform: scale(0.9);
-    margin-top: -0.95rem;
+    margin-top: 0.95rem;
 }
 
 .listHeader{
@@ -19,15 +18,29 @@
 }
 
 .btn {
-    background-color: var(--bg-panel);
-    border: 3px solid var(--btn-border);
-    border-radius: 30px;
-    font-size: 1.2rem;
-    color: var(--btn-border);
-    height: 2.5rem;
-    width: 8rem;
-    font-weight: 600;
-    padding: 0.4rem 1rem;
+    transition: all 0.5s;
+    background-color: var(--bg-panel) !important;
+    border: 2.95px solid var(--btn-border) !important;
+    text-transform: capitalize !important;
+    color: var(--btn-color) !important;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+  
+  
+    @media only screen and (max-width: 910px) {
+        width: 100%;
+    }
+  
+    &:hover {
+        transition: all 0.85s !important;
+        box-shadow: var(--hover-glow) !important;
+    }
+  
+    width: 7rem;
+    height: 2.5rem !important;
+    border-radius: 30px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    padding: 0rem 1rem;
   }
   
 
@@ -40,7 +53,7 @@
 .card {
     background-color: var(--bg-manage-panel);
     display: flex;
-    width: 18rem;
+    width: 17rem;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
@@ -51,19 +64,19 @@
     .head {
         display: flex;
         align-items: center;
-        height: 3rem;
+        height: 2.7rem;
         background-color: var(--bw-light);
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.123);
         padding: 0 1.25rem;
         h2 {
             font-family: $font;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 500;
             margin: 0;
             color: var(--highlight-text-color);
         }
         img {
-            height: 2rem;
+            height: 1.75rem;
             margin-left: auto;
         }
     }
@@ -86,14 +99,14 @@
             p {
                 margin: 0;
                 font-family: $font;
-                font-size: 0.75rem;
+                font-size: 0.7rem;
                 grid-area: key;
                 color: var(--bw-text);
             }
             h3 {
                 margin: 0;
                 font-family: $font;
-                font-size: 1rem;
+                font-size: 0.9rem;
                 font-weight: 400;
                 grid-area: value;
                 color: var(--bw-text);
@@ -124,7 +137,7 @@
         .descText{
             font-family: $font;
             
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             margin-top: 0.35rem;
             text-overflow:ellipsis ;
             line-height: 150%;
@@ -166,7 +179,7 @@
         display: flex;
         align-items: center;
         padding: 0 1.25rem;
-        padding-bottom: 1rem;
+        padding-bottom: 0.7rem;
         justify-content: space-between;
         margin-top: 0.5rem;
         p{
@@ -181,10 +194,16 @@
             border: 0;
             color: var(--prog-primary-dark);
             border-radius: 20px;
+            text-transform: capitalize;
             font-family: $font;
-            font-size: 0.5;
-            font-weight: 500;
+            font-size: 0.7rem !important;
+            font-weight: 500 !important;
             padding: 0.25rem 0.75rem;
+
+            &:hover {
+                transition: all 0.85s !important;
+                box-shadow: var(--hover-glow) !important;
+            }
         }
     }
 }
@@ -192,7 +211,7 @@
 .rowCard {
     display: flex;
     width: max-content;
-    margin: 1rem 0;
+    margin: 0.7rem 0;
 }
 
 .row {
@@ -208,7 +227,7 @@
     background-color: var(--bw-light);
     box-shadow: 0px 0px 15px rgba(47, 47, 47, 0.25);
     margin: 0 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.25rem;
     padding: 0 1.25rem;
 
     p{
