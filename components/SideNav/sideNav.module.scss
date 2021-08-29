@@ -43,3 +43,13 @@
         margin-left: -1 * $side-nav-width;
     }
 }
+
+.active{
+    @extend .entry;
+    background-color: var(--prog-primary);
+}
+
+.inActive{
+     @extend .entry;
+    background-color: inherit;
+}
