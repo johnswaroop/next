@@ -44,16 +44,31 @@
 }
 
 .walletBtn {
-    background-color: var(--bg-panel);
-    border: 2.95px solid var(--btn-border);
-    font-size: 0.84rem;
-    color: var(--btn-color);
+    transition: all 0.5s;
+    background-color: var(--bg-panel) !important;
+    border: 2.95px solid var(--btn-border) !important;
+    text-transform: capitalize !important;
+    color: var(--btn-color) !important;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 15px !important;
+
+    @media only screen and (max-width: 910px) {
+        width: 100%;
+    }
+
+    &:hover {
+        transition: all 0.85s !important;
+        box-shadow: var(--hover-glow) !important;
+    }
+
+   
+   
     height: 2rem;
     width: 10rem;
-    font-weight: 600;
-    margin-right: 1rem;
+    font-weight: 600 !important;
+    margin-right: 1rem !important;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
+    border-radius: 12px !important;
 }
 
 .language {

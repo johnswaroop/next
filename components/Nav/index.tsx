@@ -4,6 +4,8 @@ import styles from './nav.module.scss'
 import assets from '../../assets'
 import darkModeUtility from './../../utility/darkMode.utility'
 import LangPicker from '@/components/LangPicker'
+import { Button } from '@material-ui/core';
+
 interface Props {
     routes: string[],
     activeRoute: string,
@@ -49,7 +51,7 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
                     <img src={assets.lightMode} />}
             </span>
 
-            <button className={styles.walletBtn} onClick={() => { setIsWalletVisible((s: any) => { return !s }) }}>Connect to wallet</button>
+            <Button className={styles.walletBtn} onClick={() => { setIsWalletVisible((s: any) => { return !s }) }}>Connect to wallet</Button>
 
             <span className={styles.settings} >
                 <img src={assets.settings} />

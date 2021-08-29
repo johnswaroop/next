@@ -5,6 +5,7 @@ import SideNav from "@/components/SideNav";
 import styles from "./manage.module.scss";
 import assets from "@/assets";
 import ConnectWallet from '@/components/ConnectWallet'
+import { Button } from "@material-ui/core";
 
 const routes: string[] = [];
 
@@ -151,7 +152,7 @@ const Home: FC = () => {
                 handleExpand={handleExpand}
               >
                 <div className={styles.depositToken}>
-                  <button className={styles.btn}>Deposit</button>
+                  <Button className={styles.btn}>Deposit</Button>
                   <p className={styles.value}>
                     You will need atleast 1000 Tokens in your wallet :
                     0x0000000000000000000000000123

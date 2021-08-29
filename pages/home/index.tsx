@@ -79,7 +79,7 @@ const Home: FC = (props) => {
                         </PanelVerticle>
                     </section>
 
-                    <Button className={styles.submitBtnNew} color="secondary">Submit</Button>
+                    <Button className={styles.submitBtnNew} color="primary">Submit</Button>
                 </Content>
             </div>
         </>

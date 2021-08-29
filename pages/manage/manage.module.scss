@@ -170,18 +170,28 @@
 }
 
 .btn {
-  background-color: var(--bg-panel);
-  border: 3px solid var(--btn-border);
-  border-radius: 30px;
-  font-size: 1.2rem;
-  color: var(--btn-border);
+  transition: all 0.5s;
+  background-color: var(--bg-panel) !important;
+  border: 2.95px solid var(--btn-border) !important;
+  text-transform: capitalize !important;
+  color: var(--btn-color) !important;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
 
-  font-weight: 600;
-  padding: 0.4rem 1rem;
 
-  &:hover{
-    box-shadow: 0px 0px 25px #2f4e47;
+  @media only screen and (max-width: 910px) {
+      width: 100%;
   }
+
+  &:hover {
+      transition: all 0.85s !important;
+      box-shadow: var(--hover-glow) !important;
+  }
+
+  width: 6.5rem;
+  border-radius: 30px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  padding: 0rem 1rem;
 }
 
 .depositToken {

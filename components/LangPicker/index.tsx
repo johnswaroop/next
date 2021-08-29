@@ -28,9 +28,9 @@ const LangPicker: FC = () => {
                 {
                     flags.map((f, index) => {
                         return (
-                            <div key={'f' + index} className={styles.option} onClick={() => {setFlagIndex(index) }}>
+                            <div key={'f' + index} className={(flagIndex == index) ? styles.active : styles.inActive} onClick={() => {setFlagIndex(index) }}>
                                 <img className={styles.flag} src={f.flag} alt="" />
-                                <p>{f.name}</p>
+                                <p >{f.name}</p>
                                 <img src={""} alt="" className={styles.arrow} />
                             </div>
                         )
