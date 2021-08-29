@@ -11,11 +11,19 @@ interface Props {
     activeRoute: string,
     darkMode: boolean,
     setDarkMode: any,
-    setIsWalletVisible: any
+    setIsWalletVisible: any,
+    isSideNavOpen:boolean,
+    setIsSideNavOpen:any
 }
 
-const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalletVisible }) => {
+const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalletVisible, isSideNavOpen,setIsSideNavOpen }) => {
 
+
+    const handleNavToggle = () => {
+         setIsSideNavOpen((s:boolean)=>{
+             return !s;
+         })
+    }
 
 
     const handleDarkMode = () => {
@@ -34,6 +42,9 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
 
     return (
         <div className={styles.nav}>
+            <span className={styles.logo}>
+                <img className={styles.navBtn} src={'./navBtn.png'} alt="" onClick={handleNavToggle} />
+            </span>
             <span className={styles.logo}>
                 <img src={assets.logo} alt="" />
             </span>

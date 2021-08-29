@@ -43,6 +43,12 @@
     margin: 0 1rem;
 }
 
+.navBtn{
+    height: 1rem;
+    object-fit: contain;
+    margin-left: 0.75rem;
+}
+
 .walletBtn {
     transition: all 0.5s;
     background-color: var(--bg-panel) !important;

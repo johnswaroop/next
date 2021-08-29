@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, useLayoutEffect, useRef } from 'react';
 import Content from '@/components/Content';
 import PanelFullWidth from '@/components/PanelFullWidth'
 import PanelVerticle from '@/components/PanelVerticle';
@@ -23,7 +23,7 @@ interface Props {
 export const getStaticProps: any = async ({ locale }: Props) => {
     return {
         props: {
-            ...(await serverSideTranslations(locale,["common"])),
+            ...(await serverSideTranslations(locale, ["common"])),
         },
     };
 };
@@ -31,15 +31,35 @@ export const getStaticProps: any = async ({ locale }: Props) => {
 const Home: FC = (props) => {
     const [darkMode, setDarkMode] = useState<boolean>(!false);
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
-    const [clicker, setClicker] = useState(0);
-    const {t} = useTranslation()
+    const [isSideNavOpen, setIsSideNavOpen] = useState(true);
+
+    const con: any = useRef();
+
+    useLayoutEffect(() => {
+        if (con.current?.getBoundingClientRect().width > 1420) {
+            setIsSideNavOpen(true);
+        }
+    }, [])
+
+
+
+    const { t } = useTranslation()
     return (
         <>
-            <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} />
+            <Nav routes={routes}
+                activeRoute={routes[0]}
+                darkMode={darkMode} setDarkMode={setDarkMode}
+                setIsWalletVisible={setIsWalletVisible} 
+                isSideNavOpen={isSideNavOpen}
+                setIsSideNavOpen={setIsSideNavOpen}
+                />
 
-            <div>
+            <div ref={con}>
                 <Content>
-                    <SideNav darkMode={darkMode}></SideNav>
+                    <SideNav darkMode={darkMode}
+                     isSideNavOpen={isSideNavOpen}
+                     setIsSideNavOpen={setIsSideNavOpen}
+                    ></SideNav>
                     {isWalletVisible ? <ConnectWallet /> : null}
                     <PopUp />
                     <section className={styles.panelOne}>
