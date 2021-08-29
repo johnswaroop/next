@@ -34,7 +34,7 @@ const IconChipInput: FC<Props> = ({ title, value, icon,darkMode}) => {
                     <span className={inFocus ? styles.customBorderFocus : styles.customBorder}>
                         <span></span>
                     </span>
-                    <img src={darkMode ? assets.helpDark : assets.helpLight} className={styles.help} alt="" onMouseOver={()=>{setToolTipActive(true)}} onMouseLeave={()=>{setTimeout(()=>{setToolTipActive(false)},500)}}/>
+                    <img src={darkMode ? assets.helpDark : assets.helpLight} className={styles.help} alt="" onMouseOver={()=>{setToolTipActive(true)}} onMouseLeave={()=>{setTimeout(()=>{setToolTipActive(false)},100)}}/>
                     {toolTipActive && <ToolTip closeToolTip={() => { setToolTipActive(false) }} infoBoxText={infoBoxText} />}
                 </span>
                 

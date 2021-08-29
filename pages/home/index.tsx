@@ -13,6 +13,7 @@ import SideNav from '@/components/SideNav';
 import ConnectWallet from '@/components/ConnectWallet'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'react-i18next';
+import { Button } from '@material-ui/core';
 const routes: string[] = [];
 
 interface Props {
@@ -78,10 +79,7 @@ const Home: FC = (props) => {
                         </PanelVerticle>
                     </section>
 
-                    <button className={styles.submitBtn} key={clicker} onClick={() => { setClicker(c => ++c) }}>
-                        Submit
-                    </button>
-
+                    <Button className={styles.submitBtnNew} color="secondary">Submit</Button>
                 </Content>
             </div>
         </>

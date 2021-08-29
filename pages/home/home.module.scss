@@ -12,8 +12,10 @@ $mob-width: 85%;
     }
 }
 
+
+
 .submitBtn {
-    transition: all 0.85s;
+    transition: all 0.5s;
     background-color: var(--bg-panel);
     border: 2.95px solid var(--btn-border);
     font-size: 1.25rem;
@@ -34,9 +36,32 @@ $mob-width: 85%;
         box-shadow: var(--hover-glow);
     }
 
+}
 
 
-   
+.submitBtnNew {
+    transition: all 0.5s;
+    background-color: var(--bg-panel) !important;
+    border: 2.95px solid var(--btn-border) !important;
+    font-size: 1.25rem !important;
+    text-transform: capitalize !important;
+    color: var(--btn-color) !important;
+    height: 2.8rem;
+    width: $panel-full-width;
+    font-weight: 550 !important;
+    margin-top: 2.5rem !important;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 15px !important;
+
+    @media only screen and (max-width: 910px) {
+        width: 100%;
+    }
+
+    &:hover {
+        transition: all 0.85s;
+        box-shadow: var(--hover-glow);
+    }
+
 }
 
 

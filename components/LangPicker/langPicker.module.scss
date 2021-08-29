@@ -45,6 +45,11 @@
     @extend .langPicker;
     margin: 0;
     box-shadow: none;
+    border-radius: 0;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(236, 236, 236);
+    }
 }
 
 .dropDown{
