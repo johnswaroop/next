@@ -90,7 +90,7 @@ const Home: FC = () => {
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
     const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
 
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState<number>(0);
     const pages = [0, 1, 3, 4];
 
     const nextPage = () => {

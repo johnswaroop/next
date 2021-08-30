@@ -141,6 +141,7 @@
   }
 
   .arrow {
+    transition: all 0.3s;
     display: flex;
     height: 0.75rem;
     margin-left: auto;
@@ -150,6 +151,7 @@
 
   .arrowReverse {
     @extend .arrow;
+    transition: all 0.7s;
     transform: rotate(180deg);
   }
 }
