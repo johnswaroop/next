@@ -20,17 +20,19 @@ $pop-up-height: auto;
     opacity: 0;
     animation: appear 0s forwards ease-in-out;
     animation-delay: 0.5s;
+    
 }
 
 .popUp {
     display: flex;
     flex-direction: column;
     width: 25rem;
-    height: 25rem;
+    transform: scale(0.8);
     background-color: var(--bg-panel);
     border-radius: 15px;
     overflow: hidden;
     position: relative;
+    box-sizing: border-box;
 }
 
 .head {
@@ -108,10 +110,22 @@ $pop-up-height: auto;
     justify-content: center;
     align-items: center;
     width: 7rem;
+    border-radius: 15px;
+    padding: 0.5rem;
+    cursor: pointer;
     p{
         font-family: $font;
         color: var(--bw-text);
     }
+
+    &:hover{
+        background-color: rgba(128, 128, 128, 0.123)
+    }
+
+    &:active{
+        background-color: rgba(128, 128, 128, 0.5)
+    }
+
 }
 
 .footer {
