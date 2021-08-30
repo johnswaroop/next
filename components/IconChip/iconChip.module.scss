@@ -15,15 +15,17 @@
     padding: 0.5rem;
     margin-right: ($spacer/2.5);
     background-color: $bg-icon;
-
+    user-select: none;
     img {
         object-fit: contain;
+        user-select: none;
     }
 }
 
 .textContainer {
     display: flex;
     flex-direction: column;
+   
     p,
     h2 {
         margin: 0;
@@ -36,6 +38,7 @@
         font-size: 0.9rem;
         font-weight: 600;
         margin-bottom: ($spacer/8);
+        user-select: none;
     }
 
     .value {
