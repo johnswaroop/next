@@ -142,6 +142,7 @@ $pop-up-height: auto;
     .sTitle {
         font-family: $font;
         margin-top: 0.5rem;
+        color: var(--bw-text);
         margin-bottom: 0.5rem;
     }
 
@@ -153,6 +154,8 @@ $pop-up-height: auto;
         background-color: #ff7979;
         align-items: center;
         padding: 0 0.2rem;
+
+        cursor: pointer;
     }
 
     .switchBtnOn {
@@ -163,6 +166,8 @@ $pop-up-height: auto;
         background-color: #048e6d;
         align-items: center;
         padding: 0 0.2rem;
+
+        cursor: pointer;
     }
 
     .sCircle {
@@ -186,17 +191,18 @@ $pop-up-height: auto;
     }
 }
 
-.textSwitch{
+.textSwitch {
     display: flex;
     font-family: $font;
     display: flex;
     align-items: center;
     width: 100%;
-    border: 1px solid gray;
+    border: 0.5px solid rgba(146, 146, 146, 0.637);
     border-radius: 50px;
     margin-bottom: 1rem;
-    p{
+    p {
         margin: 0 1rem;
+        color: var(--bw-text);
     }
 }
 
