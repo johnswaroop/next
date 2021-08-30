@@ -143,7 +143,7 @@ const Home: FC = () => {
               <div className={styles.panel3}>
                 <p className={styles.panelTitle}>Share Presale Link</p>
                 <h3 className={styles.valueLink}>
-                  {"https://www.youtube.com/watch?v=bOMksnSaAJ4"}
+                  {"https://youtu.be/dQw4w9WgXcQ"}
                 </h3>
               </div>
 
