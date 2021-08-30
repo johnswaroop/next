@@ -18,7 +18,7 @@ interface Props {
 const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalletVisible, setIsCalculatorVisible }) => {
 
 
-
+    
     const handleDarkMode = () => {
         setDarkMode((currentMode: boolean) => {
             darkModeUtility(currentMode);
@@ -32,7 +32,12 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
             return !currentMode;
         })
     }, [])
-
+    
+    useEffect(()=>{
+        const nav:any =document.querySelector('#nav');
+        nav.style.marginLeft="-17rem";
+    },[]);
+   
     return (
         <div className={styles.nav}>
             <span className={styles.logo}>
@@ -41,11 +46,11 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
                         () => {
                             const nav:any =document.querySelector('#nav');
                             if(nav.style.marginLeft=='-17rem'){
-                                console.log("open");
+                                //console.log("open");
                                 nav.style.marginLeft="0rem";
                             }
                             else{
-                                console.log("close");
+                                //console.log("close");
                                 nav.style.marginLeft="-17rem";
                             };
                         }

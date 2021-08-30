@@ -41,12 +41,14 @@
 .logo {
     display: flex;
     margin: 0 1rem;
+    cursor: pointer;
 }
 
 .navBtn{
     height: 1rem;
     object-fit: contain;
     margin-left: 0.75rem;
+    cursor: pointer;
 }
 
 .walletBtn {
@@ -84,6 +86,7 @@
     background-color: var(--bg-panel);
     margin: 0 1rem;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .darkModeIcon {
@@ -98,4 +101,5 @@
     @extend .darkModeIcon;
     margin-left: 0;
     margin-right: 0.5rem;
+    cursor: pointer;
 }

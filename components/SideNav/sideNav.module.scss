@@ -1,8 +1,10 @@
 @import "./../../scss/variables";
-.sideNav{
+.sideNav {
     transition: margin 0.35s ease-in-out;
     display: flex;
     position: fixed;
+    z-index: 1000;
+    margin-top: $nav-height;
     flex-direction: column;
     height: $content-heigth;
     width: $side-nav-width;
@@ -10,46 +12,52 @@
     left: 0;
     top: 0;
     background-color: var(--sideNav-bg);
-    margin-top: $nav-height;
+
     border-right: 1px solid var(--side-nav-border);
     border-top: 1px solid var(--side-nav-border);
     padding-top: 0.75rem;
     margin-left: -1 * $side-nav-width;
-    .entry{
+    .entry {
         display: flex;
         align-items: center;
         padding: 1rem 1.25rem;
         margin: 0.5rem 0;
         cursor: pointer;
-        img{
+        img {
             object-fit: contain;
-            
+
             width: 1.25rem;
         }
-        p{
+        p {
             font-family: $font;
             margin: 0;
             margin-left: 1.5rem;
             color: var(--text-color);
         }
 
-        &:hover{
-          background-color: #ffffffa4;
+        &:hover {
+            background-color: #ffffffa4;
         }
     }
 
     // @media only screen and (max-width: 1420px) {
     //     transition: all 0.35s ease-in-out;
-       
+
     // }
 }
 
-.active{
+.active {
     @extend .entry;
     background-color: var(--prog-primary);
 }
 
-.inActive{
-     @extend .entry;
+.inActive {
+    @extend .entry;
     background-color: inherit;
+}
+
+.con {
+    display: flex;
+    height: 100vh;
+    width: 100%;
 }

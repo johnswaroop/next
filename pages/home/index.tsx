@@ -42,9 +42,7 @@ const Home: FC = (props) => {
         
             <div>
                 <Content>
-                    <SideNav darkMode={darkMode}
-
-                    ></SideNav>
+                    <SideNav darkMode={darkMode}></SideNav>
                     {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
                     {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
                     <PopUp />
