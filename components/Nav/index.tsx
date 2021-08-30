@@ -5,6 +5,7 @@ import assets from '../../assets'
 import darkModeUtility from './../../utility/darkMode.utility'
 import LangPicker from '@/components/LangPicker'
 import { Button } from '@material-ui/core';
+import { useRouter } from "next/router";
 
 interface Props {
     routes: string[],
@@ -16,6 +17,8 @@ interface Props {
 }
 
 const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalletVisible, setIsCalculatorVisible }) => {
+
+    const router = useRouter();
 
 
     
@@ -75,10 +78,10 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
             </span>
 
             <Button className={styles.walletBtn} onClick={() => { setIsWalletVisible((s: any) => { return !s }) }}>Connect to wallet</Button>
-
-            <span className={styles.settings} onClick={() => { setIsCalculatorVisible((s: any) => { return !s }) }} >
+           
+            {('/home' == router.asPath)&&<span className={styles.settings} onClick={() => { setIsCalculatorVisible((s: any) => { return !s }) }} >
                 <img src={assets.settings} />
-            </span>
+            </span>}
 
             <LangPicker></LangPicker>
         </div>

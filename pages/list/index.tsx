@@ -6,7 +6,8 @@ import styles from "./list.module.scss";
 import assets from '@/assets';
 import ConnectWallet from '@/components/ConnectWallet'
 import { Button } from '@material-ui/core';
-import Calculator from '@/components/Calculator'
+import Calculator from '@/components/Calculator';
+import Link from 'next/link'
 import next from 'next';
 const routes: string[] = [];
 
@@ -55,7 +56,9 @@ const Card: FC = () => {
             </div>
             <div className={styles.action}>
                 <p>Starts in 50:00</p>
-                <Button>View Presale</Button>
+                <Link href="./contribute">
+                    <Button>View Presale</Button>
+                </Link>
             </div>
         </div>
     )
