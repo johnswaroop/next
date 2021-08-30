@@ -14,7 +14,7 @@
     border-right: 1px solid var(--side-nav-border);
     border-top: 1px solid var(--side-nav-border);
     padding-top: 0.75rem;
-    
+    margin-left: -1 * $side-nav-width;
     .entry{
         display: flex;
         align-items: center;
@@ -38,10 +38,10 @@
         }
     }
 
-    @media only screen and (max-width: 1420px) {
-        transition: all 0.35s ease-in-out;
-        margin-left: -1 * $side-nav-width;
-    }
+    // @media only screen and (max-width: 1420px) {
+    //     transition: all 0.35s ease-in-out;
+       
+    // }
 }
 
 .active{

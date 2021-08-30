@@ -6,7 +6,7 @@ import styles from "./list.module.scss";
 import assets from '@/assets';
 import ConnectWallet from '@/components/ConnectWallet'
 import { Button } from '@material-ui/core';
-
+import Calculator from '@/components/Calculator'
 const routes: string[] = [];
 
 const Card: FC = () => {
@@ -60,15 +60,19 @@ const Card: FC = () => {
     )
 }
 
+
+
 const Home: FC = () => {
     const [darkMode, setDarkMode] = useState<boolean>(!false);
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
+    const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
     return (
         <>
-            <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} />
+             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible}/>
             <div>
                 <Content>
-                    {isWalletVisible ? <ConnectWallet /> : null}
+                    {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
+                    {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
                     <SideNav darkMode={darkMode}></SideNav>
                     <div className={styles.list}>
                         <div className={styles.listHeader}>
@@ -101,7 +105,7 @@ const Home: FC = () => {
                             </div>
                         </div>
                         <div className={styles.listControl}>
-                        <Button className={styles.btn} color="primary">Previous</Button>
+                            <Button className={styles.btn} color="primary">Previous</Button>
                             <p className={styles.pagination}>Displaying 1 to 8 of 60 Presales</p>
                             <Button className={styles.btn} color="primary">Next</Button>
                         </div>

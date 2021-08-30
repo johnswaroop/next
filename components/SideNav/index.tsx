@@ -5,19 +5,13 @@ import Link from 'next/link'
 import { useRouter } from "next/router";
 interface Props {
     darkMode: boolean,
-    isSideNavOpen: boolean,
-    setIsSideNavOpen: any
 }
 
-const index: FC<Props> = ({ darkMode, isSideNavOpen, setIsSideNavOpen }) => {
+const index: FC<Props> = ({ darkMode}) => {
     const router = useRouter();
-    const navR: any = useRef();
-    if (!isSideNavOpen) {
-      navR.current.style.marginLeft="0";
-    }
-
+    
     return (
-        <div className={styles.sideNav} ref={navR}>
+        <div className={styles.sideNav} id={"nav"}>
             <Link href='/home'>
                 <span className={('/home' == router.asPath) ? styles.active : styles.inActive}>
                     <img src={!darkMode ? assets.navIcon1 : assets.navIcon1N} alt="" />

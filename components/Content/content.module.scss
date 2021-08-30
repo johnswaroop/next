@@ -7,11 +7,11 @@
     flex-direction: column;
     align-items: center;
     padding-top: $nav-height;
-    padding-left: $side-nav-width;
+    padding-left: 0;
     
-    @media only screen and (max-width: 1420px) {
-        padding-left: 0;
-    }
+    // @media only screen and (max-width: 1420px) {
+    //     padding-left: 0;
+    // }
 }
 
 .chips {

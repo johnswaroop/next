@@ -14,6 +14,7 @@ import ConnectWallet from '@/components/ConnectWallet'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'react-i18next';
 import { Button } from '@material-ui/core';
+import Calculator from '@/components/Calculator';
 const routes: string[] = [];
 
 interface Props {
@@ -31,36 +32,21 @@ export const getStaticProps: any = async ({ locale }: Props) => {
 const Home: FC = (props) => {
     const [darkMode, setDarkMode] = useState<boolean>(!false);
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
-    const [isSideNavOpen, setIsSideNavOpen] = useState(true);
-
-    const con: any = useRef();
-
-    useLayoutEffect(() => {
-        if (con.current?.getBoundingClientRect().width > 1420) {
-            setIsSideNavOpen(true);
-        }
-    }, [])
-
-
+    const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
+   
 
     const { t } = useTranslation()
     return (
         <>
-            <Nav routes={routes}
-                activeRoute={routes[0]}
-                darkMode={darkMode} setDarkMode={setDarkMode}
-                setIsWalletVisible={setIsWalletVisible} 
-                isSideNavOpen={isSideNavOpen}
-                setIsSideNavOpen={setIsSideNavOpen}
-                />
-
-            <div ref={con}>
+             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible}/>
+        
+            <div>
                 <Content>
                     <SideNav darkMode={darkMode}
-                     isSideNavOpen={isSideNavOpen}
-                     setIsSideNavOpen={setIsSideNavOpen}
+
                     ></SideNav>
-                    {isWalletVisible ? <ConnectWallet /> : null}
+                    {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
+                    {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
                     <PopUp />
                     <section className={styles.panelOne}>
                         <PanelFullWidth>

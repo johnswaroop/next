@@ -4,8 +4,9 @@ import Nav from "@/components/Nav";
 import SideNav from "@/components/SideNav";
 import styles from "./manage.module.scss";
 import assets from "@/assets";
-import ConnectWallet from '@/components/ConnectWallet'
+import ConnectWallet from '@/components/ConnectWallet';
 import { Button } from "@material-ui/core";
+import Calculator from "@/components/Calculator";
 
 const routes: string[] = [];
 
@@ -85,16 +86,18 @@ const Home: FC = () => {
 
   const [inFocus, setInFocus] = useState<boolean>(false);
   const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
+  const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
   const handleFocus = () => {
     setInFocus((f) => !f);
   };
 
   return (
     <>
-       <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} />
+       <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible}/>
       <div>
         <Content>
-        {isWalletVisible&&<ConnectWallet/>}
+        {isWalletVisible&&<ConnectWallet setIsWalletVisible={setIsWalletVisible}/>}
+        {isCalculatorVisible&&<Calculator setIsCalculatorVisible={setIsCalculatorVisible}/>}
           <SideNav darkMode={darkMode}></SideNav>
           <div className={styles.manage}>
             <span className={styles.header}>
@@ -115,7 +118,6 @@ const Home: FC = () => {
                     </span>
                   </div>
                 </div>
-
                 <div className={styles.panel2}>
                   <h3 className={styles.panelTitle}>Token Information</h3>
                   <div className={styles.row}>

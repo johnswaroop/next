@@ -12,18 +12,11 @@ interface Props {
     darkMode: boolean,
     setDarkMode: any,
     setIsWalletVisible: any,
-    isSideNavOpen:boolean,
-    setIsSideNavOpen:any
+    setIsCalculatorVisible: any,
 }
 
-const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalletVisible, isSideNavOpen,setIsSideNavOpen }) => {
+const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalletVisible, setIsCalculatorVisible }) => {
 
-
-    const handleNavToggle = () => {
-         setIsSideNavOpen((s:boolean)=>{
-             return !s;
-         })
-    }
 
 
     const handleDarkMode = () => {
@@ -43,7 +36,21 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
     return (
         <div className={styles.nav}>
             <span className={styles.logo}>
-                <img className={styles.navBtn} src={'./navBtn.png'} alt="" onClick={handleNavToggle} />
+                <img className={styles.navBtn} src={'./navBtn.png'}
+                    onClick={
+                        () => {
+                            const nav:any =document.querySelector('#nav');
+                            if(nav.style.marginLeft=='-17rem'){
+                                console.log("open");
+                                nav.style.marginLeft="0rem";
+                            }
+                            else{
+                                console.log("close");
+                                nav.style.marginLeft="-17rem";
+                            };
+                        }
+                    }
+                />
             </span>
             <span className={styles.logo}>
                 <img src={assets.logo} alt="" />
@@ -64,7 +71,7 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
 
             <Button className={styles.walletBtn} onClick={() => { setIsWalletVisible((s: any) => { return !s }) }}>Connect to wallet</Button>
 
-            <span className={styles.settings} >
+            <span className={styles.settings} onClick={() => { setIsCalculatorVisible((s: any) => { return !s }) }} >
                 <img src={assets.settings} />
             </span>
 

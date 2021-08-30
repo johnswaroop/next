@@ -3,10 +3,20 @@ import { FC } from "react";
 import assets from "../../assets";
 import styles from './connectWallet.module.scss'
 
-const PopUp: FC = () => {
+interface props {
+    setIsWalletVisible: any
+}
+
+
+const PopUp: FC<props> = ({ setIsWalletVisible }) => {
 
     return (
-        <div className={styles.popUpContainer}>
+        <div className={styles.popUpContainer} id={"con"}
+            onClick={(e: any) => {
+                if (e.target.id == "con") {
+                    setIsWalletVisible((s: any) => { return (!s) });
+                }
+            }}>
             <div className={styles.popUp}>
                 <div className={styles.walletCon}>
                     <span className={styles.header}>
@@ -20,7 +30,7 @@ const PopUp: FC = () => {
                             </span>
                             <span className={styles.iconCon}>
                                 <img className={styles.icon} src={assets.w4} alt="" />
-                                <p>Wallet Connect</p> 
+                                <p>Wallet Connect</p>
                             </span>
                         </div>
                         <div className={styles.row}>
@@ -36,7 +46,7 @@ const PopUp: FC = () => {
                     </span>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
