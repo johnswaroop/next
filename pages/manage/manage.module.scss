@@ -123,6 +123,7 @@
 .valueLink {
   @extend .value;
   margin: 0;
+  user-select: text;
 }
 
 .panelHead {

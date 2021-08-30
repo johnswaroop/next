@@ -13,7 +13,7 @@
     right: 0;
     bottom: 6px;
     z-index: 200;
-    user-select: none;
+    
 }
 
 .iconContainer {
@@ -28,7 +28,7 @@
   
     img {
         object-fit: contain;
-        user-select: none;
+        
     }
 }
 
@@ -40,7 +40,7 @@
     h2 {
         margin: 0;
         padding: 0;
-        user-select: none;
+        
     }
 
     .title {
@@ -49,7 +49,7 @@
         font-size: 0.9rem;
         font-weight: 600;
         margin-bottom: ($spacer/8);
-        user-select: none;
+        
     }
 
     .input {
@@ -91,7 +91,7 @@
     margin-top: 1px;
     background-color: var(--border-color);
     box-sizing: border-box;
-    user-select: none;
+    
     span {
         display: flex;
         width: 100%;
