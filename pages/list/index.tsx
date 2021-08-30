@@ -7,6 +7,7 @@ import assets from '@/assets';
 import ConnectWallet from '@/components/ConnectWallet'
 import { Button } from '@material-ui/core';
 import Calculator from '@/components/Calculator'
+import next from 'next';
 const routes: string[] = [];
 
 const Card: FC = () => {
@@ -60,15 +61,58 @@ const Card: FC = () => {
     )
 }
 
+interface pageProps {
+    index: number;
+}
 
+const Page: FC<pageProps> = ({ index }) => {
+    return (
+        <div className={styles.listContent}
+            id={'lc' + index}>
+            <div className={styles.rowCard}>
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
+            <div className={styles.rowCard}>
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
+        </div>
+    )
+}
 
 const Home: FC = () => {
     const [darkMode, setDarkMode] = useState<boolean>(!false);
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
     const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
+
+    const [currentPage, setCurrentPage] = useState(0);
+    const pages = [0, 1, 3, 4];
+
+    const nextPage = () => {
+        if (currentPage < pages.length - 1) {
+            let page: any = document.querySelector("#lc0");
+            page.style.marginLeft = `${-(currentPage + 1) * 100}%`;
+            setCurrentPage(c => ++c);
+        }
+    }
+
+    const prevPage = () => {
+        console.log(currentPage)
+        if (currentPage > 0) {
+            let page: any = document.querySelector("#lc0");
+            page.style.marginLeft = `${-(currentPage - 1) * 100}%`;
+            setCurrentPage(c => --c);
+        }
+    }
+
     return (
         <>
-             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible}/>
+            <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible} />
             <div>
                 <Content>
                     {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
@@ -90,24 +134,17 @@ const Home: FC = () => {
                                 <span className={styles.customBorder} />
                             </span>
                         </div>
-                        <div className={styles.listContent}>
-                            <div className={styles.rowCard}>
-                                <Card />
-                                <Card />
-                                <Card />
-                                <Card />
-                            </div>
-                            <div className={styles.rowCard}>
-                                <Card />
-                                <Card />
-                                <Card />
-                                <Card />
-                            </div>
+                        <div className={styles.slider}>
+                            {
+                                pages.map((page, i) => {
+                                    return (<Page index={i} />)
+                                })
+                            }
                         </div>
                         <div className={styles.listControl}>
-                            <Button className={styles.btn} color="primary">Previous</Button>
-                            <p className={styles.pagination}>Displaying 1 to 8 of 60 Presales</p>
-                            <Button className={styles.btn} color="primary">Next</Button>
+                            <Button className={styles.btn} disabled={(currentPage > 0) ? false : true} color="primary" onClick={prevPage}>Previous</Button>
+                            <p className={styles.pagination}>{`Displaying ${(currentPage * 8) + 1} to ${(currentPage * 8) + 8} of ${pages.length * 8} Presales`}</p>
+                            <Button className={styles.btn} disabled={(currentPage < pages.length - 1) ? false : true} color="primary" onClick={nextPage}>Next</Button>
                         </div>
                     </div>
                 </Content>

@@ -152,6 +152,30 @@ const Home: FC = () => {
                                 <h3>Dexlot Warining</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis porro, voluptates quis cupiditate sequi nesciunt dolores molestias inventore a vel autem minima suscipit similique nulla.</p>
                             </div>
+                            <div className={styles.warning}>
+                                <h3>Dexlot Warining</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis porro, voluptates quis cupiditate sequi nesciunt dolores molestias inventore a vel autem minima suscipit similique nulla.</p>
+                            </div>
+                            <div className={styles.warning}>
+                                <h3>Dexlot Warining</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis porro, voluptates quis cupiditate sequi nesciunt dolores molestias inventore a vel autem minima suscipit similique nulla.</p>
+                            </div>
+                            <div className={styles.warning}>
+                                <h3>Dexlot Warining</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis porro, voluptates quis cupiditate sequi nesciunt dolores molestias inventore a vel autem minima suscipit similique nulla.</p>
+                            </div>
+                            <div className={styles.warning}>
+                                <h3>Dexlot Warining</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis porro, voluptates quis cupiditate sequi nesciunt dolores molestias inventore a vel autem minima suscipit similique nulla.</p>
+                            </div>
+                            <div className={styles.warning}>
+                                <h3>Dexlot Warining</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis porro, voluptates quis cupiditate sequi nesciunt dolores molestias inventore a vel autem minima suscipit similique nulla.</p>
+                            </div>
+                            <div className={styles.warning}>
+                                <h3>Dexlot Warining</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis porro, voluptates quis cupiditate sequi nesciunt dolores molestias inventore a vel autem minima suscipit similique nulla.</p>
+                            </div>
                         </div>
                         <div className={styles.center}>
                             <Card />
