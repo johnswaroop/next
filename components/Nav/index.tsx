@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FC } from 'react';
 import styles from './nav.module.scss'
 import assets from '../../assets'
@@ -6,6 +6,7 @@ import darkModeUtility from './../../utility/darkMode.utility'
 import LangPicker from '@/components/LangPicker'
 import { Button } from '@material-ui/core';
 import { useRouter } from "next/router";
+import { count } from 'console';
 
 interface Props {
     routes: string[],
@@ -20,8 +21,9 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
 
     const router = useRouter();
 
+    const [count, setCount] = useState(0);
 
-    
+
     const handleDarkMode = () => {
         setDarkMode((currentMode: boolean) => {
             darkModeUtility(currentMode);
@@ -35,26 +37,26 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
             return !currentMode;
         })
     }, [])
-    
-    useEffect(()=>{
-        const nav:any =document.querySelector('#nav');
-        nav.style.marginLeft="-17rem";
-    },[]);
-   
+
+    useEffect(() => {
+        const nav: any = document.querySelector('#nav');
+        nav.style.marginLeft = "-17rem";
+    }, []);
+
     return (
         <div className={styles.nav}>
             <span className={styles.logo}>
                 <img className={styles.navBtn} src={'./navBtn.png'}
                     onClick={
                         () => {
-                            const nav:any =document.querySelector('#nav');
-                            if(nav.style.marginLeft=='-17rem'){
+                            const nav: any = document.querySelector('#nav');
+                            if (nav.style.marginLeft == '-17rem') {
                                 //console.log("open");
-                                nav.style.marginLeft="0rem";
+                                nav.style.marginLeft = "0rem";
                             }
-                            else{
+                            else {
                                 //console.log("close");
-                                nav.style.marginLeft="-17rem";
+                                nav.style.marginLeft = "-17rem";
                             };
                         }
                     }
@@ -78,9 +80,9 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
             </span>
 
             <Button className={styles.walletBtn} onClick={() => { setIsWalletVisible((s: any) => { return !s }) }}>Connect to wallet</Button>
-           
-            {('/home' == router.asPath)&&<span className={styles.settings} onClick={() => { setIsCalculatorVisible((s: any) => { return !s }) }} >
-                <img src={assets.settings} />
+
+            {('/home' == router.asPath) && <span className={styles.settings} onClick={() => { setCount(c => ++c); setIsCalculatorVisible((s: any) => { return !s }) }} >
+                <img src={assets.settings} style={{ transform: `rotate(${60*count}deg)` }} className={styles.setIcon}/>
             </span>}
 
             <LangPicker></LangPicker>
