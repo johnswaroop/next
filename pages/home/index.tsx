@@ -33,19 +33,22 @@ const Home: FC = (props) => {
     const [darkMode, setDarkMode] = useState<boolean>(!false);
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
     const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
-   
+    const [popUpVisible, setPopUpVisible] = useState<boolean>(true);
 
     const { t } = useTranslation()
     return (
         <>
-             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible}/>
-        
+            <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible} />
+
             <div>
-                <Content>
+                <Content styling={popUpVisible ? {
+                    overflow: "hidden",
+                    height: "90vh"
+                } : {}}>
                     <SideNav darkMode={darkMode}></SideNav>
                     {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
                     {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
-                    <PopUp />
+                    <PopUp popUpVisible={popUpVisible} setPopUpVisible={setPopUpVisible} />
                     <section className={styles.panelOne}>
                         <PanelFullWidth>
                             <InputBox placeHolder={t("common:Enter Token address")} darkMode={darkMode} />

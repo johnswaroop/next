@@ -4,9 +4,14 @@ import assets from "../../assets";
 import styles from './popUp.module.scss'
 import { Button } from "@material-ui/core";
 
-const PopUp: FC = () => {
+interface props {
+    popUpVisible: boolean,
+    setPopUpVisible: any
+}
 
-    const [popUpVisible, setPopUpVisible] = useState<boolean>(true);
+const PopUp: FC<props> = ({popUpVisible,setPopUpVisible}) => {
+
+    // const [popUpVisible, setPopUpVisible] = useState<boolean>(true);
 
     const [pageindex, setPageIndex] = useState<number>(0);
 
