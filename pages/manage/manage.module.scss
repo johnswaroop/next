@@ -10,6 +10,7 @@
   width: max-content;
   @media only screen and (max-width: 1080px) {
     padding: 0;
+    margin-bottom: 2rem;
   }
 }
 
@@ -241,7 +242,8 @@
 
   .value {
     margin: 0;
-    margin-left: 1rem;
+    margin-right: auto;
+
   }
 
   .valueWallet {
@@ -265,6 +267,7 @@
       text-align: center;
       width: 60vw;
       margin-left: 0;
+      margin-bottom: 1rem;
     }
   }
 }
@@ -428,6 +431,7 @@
 
     @media only screen and (max-width: 1080px) {
       margin: 0 0;
+      font-size: 0.9rem;
     }
   }
 }

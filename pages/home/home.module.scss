@@ -54,7 +54,9 @@ $mob-width: 85%;
     border-radius: 15px !important;
 
     @media only screen and (max-width: 910px) {
-        width: 100%;
+        width: 80%;
+        margin-top: 1rem !important;
+        margin-bottom: 3rem !important;
     }
 
     &:hover {
