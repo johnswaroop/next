@@ -8,14 +8,13 @@
     flex-direction: column;
     height: $content-heigth;
     width: $side-nav-width;
-    z-index: 8500;
+    z-index: 9500;
     left: 0;
     top: 0;
     background-color: var(--sideNav-bg);
 
     border-right: 1px solid var(--side-nav-border);
     border-top: 1px solid var(--side-nav-border);
-    padding-top: 0.75rem;
     margin-left: -1 * $side-nav-width;
     .entry {
         display: flex;
@@ -40,22 +39,13 @@
         }
     }
 
-    // @media only screen and (max-width: 1420px) {
-    //     transition: all 0.35s ease-in-out;
-
-    // }
+    @media only screen and (max-width: 1420px) {
+        transition: all 0.35s ease-in-out;
+        margin-top: $nav-height+1.5vh;
+        height: (-1.5+$content-heigth);
+    }
 }
 
-.dimmer{
-    display: flex;
-    position: fixed;
-    flex-grow: 1;
-    width: 110rem;
-    margin-left: $side-nav-width;
-    height: (100-$nav-height);
-    background-color: rebeccapurple
-
-}
 
 .active {
     @extend .entry;

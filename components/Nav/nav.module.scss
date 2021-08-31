@@ -9,7 +9,7 @@
     position: fixed;
     z-index: 9000;
     @media only screen and (max-width: 910px) {
-        height: $nav-height + 1.5vh;
+        height: $nav-height+1.5vh;
     }
 }
 
@@ -116,9 +116,13 @@
     flex-grow: 1;
     width: 100%;
 
-    height: $content-heigth;
+   
     background-color: rgba(10, 0, 44, 0.582);
     animation: appear 0.35s forwards ease-in-out;
+    @media only screen and (max-width: 1420px) {
+        margin-top: $nav-height+1.5;
+        height: (-1.5+$content-heigth);
+    }
 }
 
 @keyframes appear {
