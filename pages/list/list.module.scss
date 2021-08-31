@@ -9,7 +9,12 @@
     padding: 1.5rem 2rem;
     box-shadow: 0px 0px 15px rgba(47, 47, 47, 0.25);
     margin-top: 0.95rem;
-    width: 81.5rem
+    width: 81.5rem;
+
+    @media only screen and (max-width: 910px) {
+        width: 20rem;
+    }
+
 }
 
 .listHeader {
@@ -206,6 +211,10 @@
     display: flex;
     width: max-content;
     margin: 0.7rem 0;
+
+    @media only screen and (max-width: 910px) {
+        flex-direction: column;
+    }
 }
 
 .row {
@@ -324,10 +333,16 @@
     transition: all 0.7s;
     display: flex;
     flex-direction: column;
+
+    
 }
 
 .slider {
     display: flex;
     width: 100%;
     overflow: hidden;
+
+    @media only screen and (max-width: 910px) {
+        padding-right: 0.5rem;
+    }
 }

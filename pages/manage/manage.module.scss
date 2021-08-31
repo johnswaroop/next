@@ -36,8 +36,11 @@
   flex-direction: column;
 
   @media only screen and (max-width: 1080px) {
-    padding: 0;
+    padding: 1rem;
+  }
 
+  @media only screen and (max-width: 490px) {
+    padding: 0 0rem;
   }
 }
 
@@ -119,7 +122,7 @@
   overflow: hidden;
   padding: 0;
   @media only screen and (max-width: 1080px) {
-    min-width: 95vw;
+    //min-width: 95vw;
   }
 }
 
@@ -155,6 +158,9 @@
   @extend .value;
   margin: 0;
   user-select: text;
+  @media only screen and (max-width: 1080px) {
+    font-size: 0.8rem;
+  }
 }
 
 .panelHead {
@@ -238,6 +244,10 @@
     margin-left: 1rem;
   }
 
+  .valueWallet {
+    @extend .value;
+  }
+
   @media only screen and (max-width: 1080px) {
     flex-direction: column;
     flex-shrink: 1;
@@ -247,9 +257,14 @@
     }
     .value {
       display: flex;
-      width: 85vw;
+      width: 60vw;
       margin-top: 1rem;
-      text-align: justify;
+      font-size: 0.8rem;
+    }
+    .valueWallet {
+      text-align: center;
+      width: 60vw;
+      margin-left: 0;
     }
   }
 }
@@ -267,6 +282,11 @@
   p {
     line-height: 150%;
     margin: 0.15rem 1rem;
+  }
+  @media only screen and (max-width: 1080px) {
+    p{
+      margin: 0 !important;
+    }
   }
 }
 
@@ -295,9 +315,10 @@
   width: 100%;
   display: flex;
   border-bottom: 3px solid var(--bg-nav);
-  
+
   @media only screen and (max-width: 1080px) {
     padding: 0;
+    width: 95%;
   }
 
   .logoLarge {
@@ -326,7 +347,7 @@
   width: 40rem;
 
   @media only screen and (max-width: 1080px) {
-    width: 85vw;
+    width: 65vw;
   }
 
   input {
@@ -341,6 +362,7 @@
     margin: 0 1.25rem;
     background: transparent;
     outline: none;
+
     &:focus {
       outline: none;
     }
@@ -366,6 +388,16 @@
       transform: scaleX(0);
     }
   }
+
+  @media only screen and (max-width: 1080px) {
+    input {
+      margin: 0;
+    }
+
+    .customBorder {
+      margin: 0;
+    }
+  }
 }
 
 .inputOptional {
@@ -374,13 +406,12 @@
   height: max-content;
 
   @media only screen and (max-width: 1080px) {
-    width: 85vw;
+    width: 60vw;
     margin-top: 1rem;
   }
 
   textarea {
     resize: vertical; /* user can resize vertically, but width is fixed */
-
     border: none;
     outline: none;
     font-family: $font;
@@ -394,6 +425,10 @@
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     padding: 0.5rem 1rem;
+
+    @media only screen and (max-width: 1080px) {
+      margin: 0 0;
+    }
   }
 }
 
@@ -405,6 +440,9 @@
   font-weight: 500;
   margin-bottom: 0.75rem;
   margin-left: 1rem !important;
+  @media only screen and (max-width: 1080px) {
+    margin-left: 0 !important;
+  }
 }
 
 .preSaleInfo {
@@ -421,7 +459,6 @@
     padding: 0;
   }
 
-
   div {
     margin: 0.5rem 0;
   }
@@ -433,7 +470,6 @@
       flex-direction: column;
       gap: 0;
     }
-   
   }
 
   .link {
@@ -454,12 +490,12 @@
       width: 20rem;
     }
     @media only screen and (max-width: 1080px) {
-     img{
-       margin-left: 0;
-     }
-      .input{
-       width: 60vw;
-     }
+      img {
+        margin-left: 0;
+      }
+      .input {
+        width: 50vw;
+      }
     }
   }
 }

@@ -159,7 +159,7 @@ const Home: FC = () => {
               >
                 <div className={styles.depositToken}>
                   <Button className={styles.btn}>Deposit</Button>
-                  <p className={styles.value}>
+                  <p className={styles.valueWallet}>
                     You will need atleast 1000 Tokens in your wallet :
                     0x0000000000000000000000000123
                   </p>
