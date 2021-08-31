@@ -46,6 +46,17 @@
     // }
 }
 
+.dimmer{
+    display: flex;
+    position: fixed;
+    flex-grow: 1;
+    width: 110rem;
+    margin-left: $side-nav-width;
+    height: (100-$nav-height);
+    background-color: rebeccapurple
+
+}
+
 .active {
     @extend .entry;
     background-color: var(--prog-primary);

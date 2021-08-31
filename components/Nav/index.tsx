@@ -22,7 +22,7 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
     const router = useRouter();
 
     const [count, setCount] = useState(0);
-
+    const [dimmer, setDimmer] = useState(false);
 
     const handleDarkMode = () => {
         setDarkMode((currentMode: boolean) => {
@@ -53,10 +53,12 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
                             if (nav.style.marginLeft == '-17rem') {
                                 //console.log("open");
                                 nav.style.marginLeft = "0rem";
+                                setDimmer(true);
                             }
                             else {
                                 //console.log("close");
                                 nav.style.marginLeft = "-17rem";
+                                setDimmer(false);
                             };
                         }
                     }
@@ -82,10 +84,20 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
             <Button className={styles.walletBtn} onClick={() => { setIsWalletVisible((s: any) => { return !s }) }}>Connect to wallet</Button>
 
             {('/home' == router.asPath) && <span className={styles.settings} onClick={() => { setCount(c => ++c); setIsCalculatorVisible((s: any) => { return !s }) }} >
-                <img src={assets.settings} style={{ transform: `rotate(${60*count}deg)` }} className={styles.setIcon}/>
+                <img src={assets.settings} style={{ transform: `rotate(${60 * count}deg)` }} className={styles.setIcon} />
             </span>}
 
             <LangPicker></LangPicker>
+            {dimmer && <div className={styles.dimmer}
+                onClick={
+                    () => {
+                        const nav: any = document.querySelector('#nav');
+                        //console.log("close");
+                        nav.style.marginLeft = "-17rem";
+                        setDimmer(false);
+                    }
+                }
+            />}
         </div>
 
     );
