@@ -21,13 +21,13 @@ interface Props {
     locale: any
 }
 
-export const getStaticProps: any = async ({ locale }: Props) => {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ["common"])),
-        },
-    };
-};
+// export const getStaticProps: any = async ({ locale }: Props) => {
+//     return {
+//         props: {
+//             ...(await serverSideTranslations(locale, ["common"])),
+//         },
+//     };
+// };
 
 const Home: FC = (props) => {
     const [darkMode, setDarkMode] = useState<boolean>(!false);
@@ -43,7 +43,7 @@ const Home: FC = (props) => {
             <div>
                 <Content styling={popUpVisible ? {
                     overflow: "hidden",
-                    height: "90vh"
+                    height: "100vh"
                 } : {}}>
                     <SideNav darkMode={darkMode} setDarkMode={setDarkMode} ></SideNav>
                     {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
