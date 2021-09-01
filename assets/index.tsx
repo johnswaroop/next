@@ -30,6 +30,8 @@ const w3:string='./w3.png'
 const w4:string='./w4.png'
 const helpLight:string='./helpLight.png'
 const helpDark:string='./helpDark.png'
+const closeToast:string='./closeToast.svg'
+const minus:string='./minus.svg'
+const plus:string='./plus.svg'
 
-
-export default { logo, bnbIcon, loading, success, failed, help, close, nextIcon, prevIcon, lightMode, darkMode, instruction, disclaimer, navIcon1, navIcon2, navIcon3, navIcon1N, navIcon2N, navIcon3N, arrowDown ,facebook,instagram,telegram,twitter,bnbCircle,w1,w2,w3,w4,settings,helpLight,helpDark}
+export default { logo, bnbIcon, loading, success, failed, help, close, nextIcon, prevIcon, lightMode, darkMode, instruction, disclaimer, navIcon1, navIcon2, navIcon3, navIcon1N, navIcon2N, navIcon3N, arrowDown ,facebook,instagram,telegram,twitter,bnbCircle,w1,w2,w3,w4,settings,helpLight,helpDark,closeToast,minus,plus}

@@ -15,6 +15,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'react-i18next';
 import { Button } from '@material-ui/core';
 import Calculator from '@/components/Calculator';
+import ToastSuccess from '@/components/ToastSuccess';
+import ToastFailed from '@/components/ToastFailed'
 const routes: string[] = [];
 
 interface Props {
@@ -39,9 +41,9 @@ const Home: FC = (props) => {
     return (
         <>
             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible} />
-
             <div>
-               
+                {/* <ToastSuccess/> */}
+                {/* <ToastFailed /> */}
                 <Content styling={popUpVisible || isWalletVisible || isCalculatorVisible ? {
                     overflow: "hidden",
                     maxHeight: "100vh",
