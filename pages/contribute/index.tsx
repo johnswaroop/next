@@ -7,6 +7,7 @@ import assets from '@/assets';
 import ConnectWallet from '@/components/ConnectWallet'
 import Calculator from '@/components/Calculator';
 import ContributeWidget from '@/components/ContributeWidget'
+import { Button } from '@material-ui/core';
 const routes: string[] = [];
 
 interface cardProps {
@@ -129,7 +130,7 @@ const Card: FC<cardProps> = ({ setIsContributeVisible }) => {
             </div>
             <div className={styles.action}>
                 <p>Starts in 50:00</p>
-                <button onClick={() => { setIsContributeVisible((s: boolean) => { return !s }) }}>Contribute</button>
+                <Button onClick={() => { setIsContributeVisible((s: boolean) => { return !s }) }}>Contribute</Button>
             </div>
         </div>
     )

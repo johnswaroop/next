@@ -228,15 +228,21 @@
         }
 
         button {
-            height: 2.25rem;
+            height: 2rem;
             background-color: var(--card-btn);
             border: 0;
             color: var(--prog-primary-dark);
             border-radius: 20px;
+            text-transform: capitalize;
             font-family: $font;
-            font-size: 1rem;
-            font-weight: 500;
+            font-size: 0.7rem !important;
+            font-weight: 500 !important;
             padding: 0.25rem 0.75rem;
+
+            &:hover {
+                transition: all 0.85s !important;
+                box-shadow: var(--hover-glow) !important;
+            }
         }
 
         @media only screen and (max-width: 910px) {

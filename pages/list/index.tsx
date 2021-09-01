@@ -148,9 +148,13 @@ const Home: FC = () => {
                             }
                         </div>
                         <div className={styles.listControl}>
-                            <Button className={styles.btn} disabled={(currentPage > 0) ? false : true} color="primary" onClick={prevPage}>Previous</Button>
+                            <Button className={styles.btn}
+                                style={!(currentPage > 0) ? { filter: "brightness(0.5)" } : {}}
+                                disabled={(currentPage > 0) ? false : true} color="primary" onClick={prevPage}>Previous</Button>
                             <p className={styles.pagination}>{`Displaying ${(currentPage * 8) + 1} to ${(currentPage * 8) + 8} of ${pages.length * 8} Presales`}</p>
-                            <Button className={styles.btn}  color="primary" onClick={nextPage}>Next</Button>
+                            <Button className={styles.btn}
+                                style={!(currentPage < pages.length - 1) ? { filter: "brightness(0.5)" } : {}}
+                                disabled={(currentPage < pages.length - 1) ? false : true} color="primary" onClick={nextPage}>Next</Button>
                         </div>
                     </div>
                 </Content>
