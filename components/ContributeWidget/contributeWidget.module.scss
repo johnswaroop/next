@@ -20,8 +20,6 @@ $pop-up-height: auto;
     animation: appear 0s forwards ease-in-out;
     animation-delay: 0.5s;
     z-index: 10000;
-
-    
 }
 
 .popUp {
@@ -34,7 +32,7 @@ $pop-up-height: auto;
     position: relative;
     @media only screen and (max-width: 910px) {
         width: 90vw;
-     }
+    }
 }
 
 .head {
@@ -107,7 +105,6 @@ $pop-up-height: auto;
     display: flex;
     justify-content: space-between;
 
-   
     .min {
         display: flex;
         flex-direction: column;
@@ -151,14 +148,18 @@ $pop-up-height: auto;
     justify-content: center;
     align-items: center;
     img {
-        height: 0.30rem;
+        height: 0.3rem;
         margin: 0 auto;
-        &:hover{
-         transform: scale(1.25);
+        &:hover {
+            transform: scale(1.25);
+        }
+
+        &:hover {
+            transform: scale(0.9);
         }
     }
 
-    .plus{
+    .plus {
         height: 1rem;
     }
 }
@@ -171,7 +172,7 @@ $pop-up-height: auto;
     border-right: 2px solid gray;
     align-items: center;
     justify-content: center;
-    p{
+    p {
         margin: 0;
         font-size: 1.25rem;
         font-family: $font;
@@ -184,7 +185,7 @@ $pop-up-height: auto;
     margin: 1.5rem 0;
 }
 
-.sec3{
+.sec3 {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -204,8 +205,6 @@ $pop-up-height: auto;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
     border-radius: 15px !important;
 
-  
-
     &:hover {
         transition: all 0.85s !important;
         box-shadow: var(--hover-glow) !important;
@@ -215,10 +214,10 @@ $pop-up-height: auto;
 .submitBtnNewRed {
     transition: all 0.5s;
     background-color: var(--bg-panel) !important;
-    border: 2.95px solid rgb(241, 47, 47)!important;
+    border: 2.95px solid rgb(241, 47, 47) !important;
     font-size: 1.25rem !important;
     text-transform: capitalize !important;
-    color: rgb(241, 47, 47)!important;
+    color: rgb(241, 47, 47) !important;
     height: 2.8rem;
     width: 6rem;
     font-weight: 550 !important;
@@ -226,15 +225,11 @@ $pop-up-height: auto;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
     border-radius: 15px !important;
 
-  
-
     &:hover {
         transition: all 0.85s !important;
         box-shadow: 0 0 15px rgb(241, 47, 47) !important;
     }
 }
-
-
 
 @keyframes appear {
     from {
