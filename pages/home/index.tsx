@@ -21,13 +21,13 @@ interface Props {
     locale: any
 }
 
-// export const getStaticProps: any = async ({ locale }: Props) => {
-//     return {
-//         props: {
-//             ...(await serverSideTranslations(locale, ["common"])),
-//         },
-//     };
-// };
+export const getStaticProps: any = async ({ locale }: Props) => {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["common"])),
+        },
+    };
+};
 
 const Home: FC = (props) => {
     const [darkMode, setDarkMode] = useState<boolean>(!false);
