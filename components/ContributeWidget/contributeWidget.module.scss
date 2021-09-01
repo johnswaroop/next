@@ -11,7 +11,7 @@ $pop-up-height: auto;
     left: 0;
     bottom: 0;
     right: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.562);
     justify-content: center;
@@ -20,6 +20,8 @@ $pop-up-height: auto;
     animation: appear 0s forwards ease-in-out;
     animation-delay: 0.5s;
     z-index: 10000;
+
+    
 }
 
 .popUp {
@@ -30,6 +32,9 @@ $pop-up-height: auto;
     border-radius: 15px;
     overflow: hidden;
     position: relative;
+    @media only screen and (max-width: 910px) {
+        width: 90vw;
+     }
 }
 
 .head {
