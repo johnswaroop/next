@@ -116,11 +116,12 @@
     flex-grow: 1;
     height: $content-heigth;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.658);
+    
     animation: appear 0.35s forwards ease-in-out;
     @media only screen and (max-width: 1420px) {
         margin-top: $nav-height+1.5;
         height: (-1.5+$content-heigth);
+        background-color: rgba(0, 0, 0, 0.658);
     }
 }
 
