@@ -138,7 +138,10 @@ const Home: FC = () => {
         <>
             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible} />
             <div>
-                <Content>
+                <Content styling={isWalletVisible ? {
+                    overflow: "hidden",
+                    maxHeight: "100vh",
+                } : {}}>
                     {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
                     {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
                     <SideNav darkMode={darkMode} setDarkMode={setDarkMode}></SideNav>

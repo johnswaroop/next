@@ -41,9 +41,10 @@ const Home: FC = (props) => {
             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible} />
 
             <div>
-                <Content styling={popUpVisible ? {
+               
+                <Content styling={popUpVisible || isWalletVisible || isCalculatorVisible ? {
                     overflow: "hidden",
-                    height: "100vh"
+                    maxHeight: "100vh",
                 } : {}}>
                     <SideNav darkMode={darkMode} setDarkMode={setDarkMode} ></SideNav>
                     {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}

@@ -11,7 +11,7 @@ $pop-up-height: auto;
     left: 0;
     bottom: 0;
     right: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     z-index: 10000;
     background-color: rgba(0, 0, 0, 0.562);
@@ -153,6 +153,15 @@ $pop-up-height: auto;
     }
 }
 
+.iconConMore{
+    @extend .iconCon;
+    &:hover{
+     background-color: transparent;
+    }
+    &:active{
+        transform: translateY(5%);
+    }
+}
 
 
 

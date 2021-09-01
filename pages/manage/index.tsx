@@ -95,7 +95,10 @@ const Home: FC = () => {
     <>
       <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible} />
       <div>
-        <Content>
+        <Content styling={isWalletVisible ? {
+          overflow: "hidden",
+          maxHeight: "100vh",
+        } : {}}>
           {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
           {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
           <SideNav darkMode={darkMode} setDarkMode={setDarkMode}></SideNav>
@@ -158,12 +161,12 @@ const Home: FC = () => {
                 handleExpand={handleExpand}
               >
                 <div className={styles.depositToken}>
-                <p className={styles.valueWallet}>
+                  <p className={styles.valueWallet}>
                     You will need atleast 1000 Tokens in your wallet :
                     0x0000000000000000000000000123
                   </p>
                   <Button className={styles.btn}>Deposit</Button>
-                 
+
                 </div>
               </CPanel>
               <CPanel
