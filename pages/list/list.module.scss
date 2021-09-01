@@ -11,15 +11,31 @@
     margin-top: 0.95rem;
     width: 81.5rem;
 
-    @media only screen and (max-width: 910px) {
-        width: 20rem;
+    @media only screen and (max-width: 1370px) {
+        width:61rem;
+        margin-top: 1rem;
+    }
+    
+    @media only screen and (max-width: 1000px) {
+        width:41rem;
+        margin-top: 1rem;
     }
 
+    @media only screen and (max-width: 910px) {
+        width: 20rem;
+        margin-top: 1rem;
+    }
+    
 }
 
 .listHeader {
     p {
         font-family: $font;
+    }
+    @media only screen and (max-width: 910px) {
+        p {
+            font-size: 0.7rem;
+        }
     }
 }
 
@@ -47,7 +63,6 @@
     font-weight: 600 !important;
     padding: 0rem 1rem;
 }
-
 
 .card {
     background-color: var(--bg-manage-panel);
@@ -205,6 +220,11 @@
             }
         }
     }
+
+    @media only screen and (max-width: 910px) {
+        margin-bottom: 1.5rem;
+      
+    }
 }
 
 .rowCard {
@@ -224,7 +244,7 @@
 
 .listHeader {
     display: flex;
-    height: 3rem;
+    min-height: 3rem;
     border-radius: 15px;
     flex-grow: 1;
     background-color: var(--bw-light);
@@ -237,6 +257,11 @@
         font-family: $font;
         font-weight: 600;
         color: var(--highlight-text-color);
+
+        @media only screen and (max-width: 910px) {
+            display: none;
+            
+        }
     }
 }
 
@@ -251,10 +276,21 @@
 .inputSearch {
     @extend .input;
     width: 15rem !important;
+    @media only screen and (max-width: 910px) {
+        width: 5rem !important;
+        margin-left: 0 !important;
+
+        input{
+            font-size: 0.7rem !important;
+        }
+    }
 }
 
 .inputSelect {
     @extend .input;
+    @media only screen and (max-width: 910px) {
+        width: 5rem !important;
+    }
 
     select {
         border: none;
@@ -272,7 +308,7 @@
             outline: none;
         }
 
-        option{
+        option {
             background-color: var(--bg-panel);
         }
     }
@@ -328,13 +364,10 @@
     color: var(--highlight-text-color);
 }
 
-
 .listContent {
     transition: all 0.7s;
     display: flex;
     flex-direction: column;
-
-    
 }
 
 .slider {
