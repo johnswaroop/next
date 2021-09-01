@@ -17,14 +17,30 @@ const index: FC<Props> = ({ darkMode, setDarkMode }) => {
     const handleDarkMode = () => {
         setDarkMode((currentMode: boolean) => {
             darkModeUtility(currentMode);
+            if (currentMode) {
+                localStorage.setItem('darkMode', 'false')
+            }
+            else {
+                localStorage.setItem('darkMode', 'true')
+            }
             return !currentMode;
         })
     }
 
     useEffect(() => {
         setDarkMode((currentMode: boolean) => {
-            darkModeUtility(currentMode);
-            return !currentMode;
+            if (localStorage.getItem('darkMode') == 'false') {
+                darkModeUtility(true);
+                return false;
+            }
+            else if (localStorage.getItem('darkMode') == 'true') {
+                darkModeUtility(false);
+                return true;
+            }
+            else {
+                darkModeUtility(currentMode);
+                return !currentMode;
+            }
         })
     }, [])
 

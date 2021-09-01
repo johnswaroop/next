@@ -56,6 +56,7 @@
     box-shadow: none;
     border-radius: 0;
     cursor: pointer;
+    border-radius: 10px;
     &:hover {
         background-color: rgba(110, 110, 110, 0.295);
     }
@@ -63,7 +64,9 @@
 
 .active {
     @extend .option;
+    
     background-color: var(--prog-primary);
+
 }
 
 .inActive {
@@ -72,9 +75,10 @@
 }
 
 .dropDown {
+    overflow: hidden;
     display: none;
     align-items: flex-start;
-    border-radius: 8px;
+    border-radius: 15px;
     position: absolute;
     width: 8rem;
     flex-direction: column;

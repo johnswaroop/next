@@ -31,12 +31,7 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
     //     })
     // }
 
-    useEffect(() => {
-        setDarkMode((currentMode: boolean) => {
-            darkModeUtility(currentMode);
-            return !currentMode;
-        })
-    }, [])
+
 
     useEffect(() => {
         const nav: any = document.querySelector('#nav');
