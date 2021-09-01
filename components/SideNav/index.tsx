@@ -48,7 +48,7 @@ const index: FC<Props> = ({ darkMode, setDarkMode }) => {
 
         <div className={styles.sideNav} id={"nav"}>
             <Link href='/home'>
-                <span className={('/home' == router.asPath) ? styles.active : styles.inActive}>
+                <span className={('/home' == router.asPath) ? styles.active : styles.inActive} style={{marginTop:"1.5rem"}}>
                     <img src={!darkMode ? assets.navIcon1 : assets.navIcon1N} alt="" />
                     <p>Create Presale</p>
                 </span>
