@@ -27,7 +27,7 @@ const Switch: FC = () => {
                         </div>
                 }
             </div>
-            <p>100000 JUPITER</p>
+            <input placeholder={"1000"}/>
         </div>
     )
 }

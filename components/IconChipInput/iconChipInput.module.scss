@@ -13,12 +13,14 @@
     right: 0;
     bottom: 6px;
     z-index: 200;
+    
 }
 
 .iconContainer {
     display: flex;
-    height: 3.5rem;
-    box-sizing: border-box;
+    height: 2rem;
+   // box-sizing: border-box;
+   width: 2rem;
     border-radius: 100%;
     border: 3px solid var(--border-icon);
     padding: 0.5rem;
@@ -27,6 +29,7 @@
   
     img {
         object-fit: contain;
+        
     }
 }
 
@@ -38,6 +41,7 @@
     h2 {
         margin: 0;
         padding: 0;
+        
     }
 
     .title {
@@ -46,6 +50,7 @@
         font-size: 0.9rem;
         font-weight: 600;
         margin-bottom: ($spacer/8);
+        
     }
 
     .input {
@@ -87,6 +92,7 @@
     margin-top: 1px;
     background-color: var(--border-color);
     box-sizing: border-box;
+    
     span {
         display: flex;
         width: 100%;
@@ -100,7 +106,7 @@
     @extend .customBorder;
 
     span {
-        animation: liquid 0.3s forwards ease-in;
+        animation: liquid 0.2s forwards ease-in;
     }
 }
 

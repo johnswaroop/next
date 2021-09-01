@@ -1,41 +1,65 @@
-import React, { FC, useRef } from 'react';
+import React, { FC, useRef, useEffect } from 'react';
 import styles from './sideNav.module.scss'
 import assets from '@/assets'
 import Link from 'next/link'
+import LangPicker from '@/components/LangPicker'
 import { useRouter } from "next/router";
+import darkModeUtility from './../../utility/darkMode.utility'
 interface Props {
     darkMode: boolean,
+    setDarkMode: any,
 }
 
-const index: FC<Props> = ({ darkMode }) => {
+const index: FC<Props> = ({ darkMode, setDarkMode }) => {
     const router = useRouter();
-    const sideRef:any = useRef();
-    
+    const sideRef: any = useRef();
 
+    const handleDarkMode = () => {
+        setDarkMode((currentMode: boolean) => {
+            darkModeUtility(currentMode);
+            return !currentMode;
+        })
+    }
+
+    useEffect(() => {
+        setDarkMode((currentMode: boolean) => {
+            darkModeUtility(currentMode);
+            return !currentMode;
+        })
+    }, [])
 
     return (
-       
-            <div className={styles.sideNav} id={"nav"}>
-                <Link href='/home'>
-                    <span className={('/home' == router.asPath) ? styles.active : styles.inActive}>
-                        <img src={!darkMode ? assets.navIcon1 : assets.navIcon1N} alt="" />
-                        <p>Create Presale</p>
-                    </span>
-                </Link>
-                <Link href='/manage'>
-                    <span className={('/manage' == router.asPath) ? styles.active : styles.inActive}>
-                        <img src={!darkMode ? assets.navIcon2 : assets.navIcon2N} alt="" />
-                        <p>Manage Presale</p>
-                    </span>
-                </Link>
-                <Link href='/list'>
-                    <span className={('/list' == router.asPath) ? styles.active : styles.inActive}>
-                        <img src={!darkMode ? assets.navIcon3 : assets.navIcon3N} alt="" />
-                        <p>List Presale</p>
-                    </span>
-                </Link>
+
+        <div className={styles.sideNav} id={"nav"}>
+            <Link href='/home'>
+                <span className={('/home' == router.asPath) ? styles.active : styles.inActive}>
+                    <img src={!darkMode ? assets.navIcon1 : assets.navIcon1N} alt="" />
+                    <p>Create Presale</p>
+                </span>
+            </Link>
+            <Link href='/manage'>
+                <span className={('/manage' == router.asPath) ? styles.active : styles.inActive}>
+                    <img src={!darkMode ? assets.navIcon2 : assets.navIcon2N} alt="" />
+                    <p>Manage Presale</p>
+                </span>
+            </Link>
+            <Link href='/list'>
+                <span className={('/list' == router.asPath) ? styles.active : styles.inActive}>
+                    <img src={!darkMode ? assets.navIcon3 : assets.navIcon3N} alt="" />
+                    <p>List Presale</p>
+                </span>
+            </Link>
+
+            <div className={styles.navBottom}>
+                <span className={styles.darkModeIcon} onClick={handleDarkMode}>
+                    {darkMode ?
+                        <img src={assets.darkMode} /> :
+                        <img src={assets.lightMode} />}
+                </span>
+                <LangPicker></LangPicker>
             </div>
-    
+        </div>
+
     );
 };
 

@@ -93,12 +93,15 @@ const Home: FC = () => {
 
   return (
     <>
-       <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible}/>
+      <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible} />
       <div>
-        <Content>
-        {isWalletVisible&&<ConnectWallet setIsWalletVisible={setIsWalletVisible}/>}
-        {isCalculatorVisible&&<Calculator setIsCalculatorVisible={setIsCalculatorVisible}/>}
-          <SideNav darkMode={darkMode}></SideNav>
+        <Content styling={isWalletVisible ? {
+          overflow: "hidden",
+          maxHeight: "100vh",
+        } : {}}>
+          {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
+          {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
+          <SideNav darkMode={darkMode} setDarkMode={setDarkMode}></SideNav>
           <div className={styles.manage}>
             <span className={styles.header}>
               <h1>Manage your presale</h1>
@@ -119,24 +122,28 @@ const Home: FC = () => {
                   </div>
                 </div>
                 <div className={styles.panel2}>
-                  <h3 className={styles.panelTitle}>Token Information</h3>
+                  <h3 className={styles.panelTitle}>Presale Information</h3>
                   <div className={styles.row}>
-                    <span className={styles.colLeft}>
-                      <Field title={"Name"} value={"Jupiter Coin"} />
-                      <Field title={"Symbol"} value={"JPC"} />
-                    </span>
-                    <span className={styles.colLeft}>
-                      <Field title={"Address"} value={"1234651111"} />
-                      <Field title={"Total Sypply"} value={"Jupiter Coin"} />
-                    </span>
-                    <span className={styles.colLeft}>
-                      <Field title={"Address"} value={"1234651111"} />
-                      <Field title={"Total Sypply"} value={"Jupiter Coin"} />
-                    </span>
-                    <span className={styles.colRight}>
-                      <Field title={"Start at"} value={"2/1/2013 7:37:08 AM"} />
-                      <Field title={"End at"} value={"2/1/2013 7:37:08 AM"} />
-                    </span>
+                    <div className={styles.presaleRow}>
+                      <span className={styles.colLeft}>
+                        <Field title={"Name"} value={"Jupiter Coin"} />
+                        <Field title={"Symbol"} value={"JPC"} />
+                      </span>
+                      <span className={styles.colLeft}>
+                        <Field title={"Address"} value={"1234651111"} />
+                        <Field title={"Total Sypply"} value={"Jupiter Coin"} />
+                      </span>
+                    </div>
+                    <div className={styles.presaleRow}>
+                      <span className={styles.colLeft}>
+                        <Field title={"Address"} value={"1234651111"} />
+                        <Field title={"Total Sypply"} value={"Jupiter Coin"} />
+                      </span>
+                      <span className={styles.colRight}>
+                        <Field title={"Start at"} value={"2/1/2013 7:37:08 AM"} />
+                        <Field title={"End at"} value={"2/1/2013 7:37:08 AM"} />
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -154,11 +161,12 @@ const Home: FC = () => {
                 handleExpand={handleExpand}
               >
                 <div className={styles.depositToken}>
-                  <Button className={styles.btn}>Deposit</Button>
-                  <p className={styles.value}>
+                  <p className={styles.valueWallet}>
                     You will need atleast 1000 Tokens in your wallet :
                     0x0000000000000000000000000123
                   </p>
+                  <Button className={styles.btn}>Deposit</Button>
+
                 </div>
               </CPanel>
               <CPanel
@@ -184,10 +192,10 @@ const Home: FC = () => {
                     the process or cancel to abort
                   </p>
                   <Button className={styles.btn}>Finalize</Button>
-                  <h5>Cancel</h5>
+                  <h5 className={styles.cancel}>Cancel</h5>
                 </span>
               </CPanel>
-              <CPanel title={"Optional - Update Presale Information"} activePanelNo={ActivePanelNo} panelNo={4} handleExpand={handleExpand}>
+              <CPanel title={"Optional Update Presale"} activePanelNo={ActivePanelNo} panelNo={4} handleExpand={handleExpand}>
                 <span className={styles.optional}>
                   <span className={styles.input}>
                     <p className={styles.inputTitle}>Upload a Logo</p>
@@ -200,7 +208,7 @@ const Home: FC = () => {
                 <span className={styles.optional}>
                   <span className={styles.inputOptional}>
                     <p className={styles.inputTitle}>Presale Information</p>
-                    <textarea placeholder={"Enter Information regarding the Presale Information"} rows={8}/>
+                    <textarea placeholder={"Enter Information regarding the Presale Information"} rows={8} />
                     <span className={styles.customBorder} />
                   </span>
                 </span>

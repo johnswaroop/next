@@ -11,7 +11,7 @@ $pop-up-height: auto;
     left: 0;
     bottom: 0;
     right: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.562);
     justify-content: center;
@@ -200,9 +200,15 @@ $pop-up-height: auto;
     border: 0.5px solid rgba(146, 146, 146, 0.637);
     border-radius: 50px;
     margin-bottom: 1rem;
-    p {
+    input {
         margin: 0 1rem;
         color: var(--bw-text);
+        background-color: transparent;
+        border: none;
+        font-size: 1rem;
+        &:focus{
+            outline: none;
+        }
     }
 }
 

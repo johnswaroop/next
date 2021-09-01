@@ -38,7 +38,7 @@ const PopUp: FC<props> = ({ setIsWalletVisible }) => {
                                 <img className={styles.icon} src={assets.w2} alt="" />
                                 <p>Trust Wallet</p>
                             </span>
-                            <span className={styles.iconCon}>
+                            <span className={styles.iconConMore}>
                                 <img className={styles.icon} src={assets.w3} alt="" />
                                 <p>More</p>
                             </span>

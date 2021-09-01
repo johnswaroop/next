@@ -15,6 +15,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'react-i18next';
 import { Button } from '@material-ui/core';
 import Calculator from '@/components/Calculator';
+import ToastSuccess from '@/components/ToastSuccess';
+import ToastFailed from '@/components/ToastFailed'
 const routes: string[] = [];
 
 interface Props {
@@ -33,19 +35,23 @@ const Home: FC = (props) => {
     const [darkMode, setDarkMode] = useState<boolean>(!false);
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
     const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
-   
+    const [popUpVisible, setPopUpVisible] = useState<boolean>(true);
 
     const { t } = useTranslation()
     return (
         <>
-             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible}/>
-        
+            <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible} />
             <div>
-                <Content>
-                    <SideNav darkMode={darkMode}></SideNav>
+                {/* <ToastSuccess/> */}
+                {/* <ToastFailed /> */}
+                <Content styling={popUpVisible || isWalletVisible || isCalculatorVisible ? {
+                    overflow: "hidden",
+                    maxHeight: "100vh",
+                } : {}}>
+                    <SideNav darkMode={darkMode} setDarkMode={setDarkMode} ></SideNav>
                     {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
                     {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
-                    <PopUp />
+                    <PopUp popUpVisible={popUpVisible} setPopUpVisible={setPopUpVisible} />
                     <section className={styles.panelOne}>
                         <PanelFullWidth>
                             <InputBox placeHolder={t("common:Enter Token address")} darkMode={darkMode} />

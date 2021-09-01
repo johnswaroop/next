@@ -9,7 +9,7 @@
     position: fixed;
     z-index: 9000;
     @media only screen and (max-width: 910px) {
-        height: $nav-height + 1.5vh;
+        height: $nav-height+1.5vh;
     }
 }
 
@@ -44,7 +44,7 @@
     cursor: pointer;
 }
 
-.navBtn{
+.navBtn {
     height: 1rem;
     object-fit: contain;
     margin-left: 0.75rem;
@@ -59,18 +59,13 @@
     color: var(--btn-color) !important;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
     border-radius: 15px !important;
-
-    @media only screen and (max-width: 910px) {
-        width: 100%;
-    }
+    
 
     &:hover {
         transition: all 0.85s !important;
         box-shadow: var(--hover-glow) !important;
     }
 
-   
-   
     height: 2rem;
     width: 10rem;
     font-weight: 600 !important;
@@ -97,9 +92,48 @@
     margin-right: 1.5rem;
 }
 
-.settings{
+.settings {
     @extend .darkModeIcon;
-    margin-left: 0;
-    margin-right: 0.5rem;
+    margin-left: auto;
+    margin-right: 1.25rem;
     cursor: pointer;
 }
+
+.setIcon {
+    transition: all 0.5s;
+}
+
+.dimmer {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: $nav-height;
+    flex-grow: 1;
+    height: $content-heigth;
+    width: 100%;
+    
+    animation: appear 0.35s forwards ease-in-out;
+    @media only screen and (max-width: 1420px) {
+        margin-top: $nav-height+1.5;
+        height: (-1.5+$content-heigth);
+        background-color: rgba(0, 0, 0, 0.658);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        margin-left: 0;
+    }
+    to {
+        opacity: 1;
+        margin-left: $side-nav-width;
+    }
+}
+
+// @media only screen and (max-width: 1080px) {
+//     .walletBtn {
+//         width: 30vw;
+//     }
+// }

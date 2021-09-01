@@ -6,11 +6,18 @@ import styles from "./contribute.module.scss"
 import assets from '@/assets';
 import ConnectWallet from '@/components/ConnectWallet'
 import Calculator from '@/components/Calculator';
+import ContributeWidget from '@/components/ContributeWidget'
+import { Button } from '@material-ui/core';
 const routes: string[] = [];
 
-const Card: FC = () => {
+interface cardProps {
+    setIsContributeVisible: any
+}
+
+const Card: FC<cardProps> = ({ setIsContributeVisible }) => {
     return (
         <div className={styles.card}>
+
             <span className={styles.head}>
                 <h2>Jupiter Coin</h2>
                 <img src={assets.bnbCircle} alt="" />
@@ -69,7 +76,7 @@ const Card: FC = () => {
                         <img src={assets.bnbCircle} alt="" />
                     </span>
                 </div>
-                <div className={styles.row}>
+                <div className={styles.rowDate}>
                     <span className={styles.stat}>
                         <p>Presale Start time</p>
                         <h3 style={{ fontSize: "0.75rem", marginTop: "0.20rem" }}>15 sep 2021 at 11:00</h3>
@@ -123,7 +130,7 @@ const Card: FC = () => {
             </div>
             <div className={styles.action}>
                 <p>Starts in 50:00</p>
-                <button>Contribute</button>
+                <Button onClick={() => { setIsContributeVisible((s: boolean) => { return !s }) }}>Contribute</Button>
             </div>
         </div>
     )
@@ -133,15 +140,21 @@ const Home: FC = () => {
     const [darkMode, setDarkMode] = useState<boolean>(!false);
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
     const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
+    const [isContributeVisible, setIsContributeVisible] = useState<boolean>(false);
 
     return (
         <>
             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible} />
             <div>
-                <Content>
+
+                <Content styling={isWalletVisible || isContributeVisible ? {
+                    overflow: "hidden",
+                    maxHeight: "100vh",
+                } : {}}>
                     {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
                     {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
-                    <SideNav darkMode={darkMode}></SideNav>
+                    {isContributeVisible && <ContributeWidget setIsContributeVisible={setIsContributeVisible} />}
+                    <SideNav darkMode={darkMode} setDarkMode={setDarkMode}></SideNav>
                     <div className={styles.contribute}>
                         <div className={styles.left}>
                             <div className={styles.warning}>
@@ -178,7 +191,7 @@ const Home: FC = () => {
                             </div>
                         </div>
                         <div className={styles.center}>
-                            <Card />
+                            <Card setIsContributeVisible={setIsContributeVisible} />
                         </div>
                         <div className={styles.right}>
 

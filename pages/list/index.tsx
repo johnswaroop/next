@@ -6,7 +6,8 @@ import styles from "./list.module.scss";
 import assets from '@/assets';
 import ConnectWallet from '@/components/ConnectWallet'
 import { Button } from '@material-ui/core';
-import Calculator from '@/components/Calculator'
+import Calculator from '@/components/Calculator';
+import Link from 'next/link'
 import next from 'next';
 const routes: string[] = [];
 
@@ -55,7 +56,9 @@ const Card: FC = () => {
             </div>
             <div className={styles.action}>
                 <p>Starts in 50:00</p>
-                <Button>View Presale</Button>
+                <Link href="./contribute">
+                    <Button>View Presale</Button>
+                </Link>
             </div>
         </div>
     )
@@ -90,7 +93,7 @@ const Home: FC = () => {
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
     const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
 
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState<number>(0);
     const pages = [0, 1, 3, 4];
 
     const nextPage = () => {
@@ -114,10 +117,13 @@ const Home: FC = () => {
         <>
             <Nav routes={routes} activeRoute={routes[0]} darkMode={darkMode} setDarkMode={setDarkMode} setIsWalletVisible={setIsWalletVisible} setIsCalculatorVisible={setIsCalculatorVisible} />
             <div>
-                <Content>
+                <Content styling={isWalletVisible ? {
+                    overflow: "hidden",
+                    maxHeight: "100vh",
+                } : {}}>
                     {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
                     {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
-                    <SideNav darkMode={darkMode}></SideNav>
+                    <SideNav darkMode={darkMode} setDarkMode={setDarkMode}></SideNav>
                     <div className={styles.list}>
                         <div className={styles.listHeader}>
                             <p>Presale List</p>
@@ -142,9 +148,13 @@ const Home: FC = () => {
                             }
                         </div>
                         <div className={styles.listControl}>
-                            <Button className={styles.btn} disabled={(currentPage > 0) ? false : true} color="primary" onClick={prevPage}>Previous</Button>
+                            <Button className={styles.btn}
+                                style={!(currentPage > 0) ? { filter: "brightness(0.5)" } : {}}
+                                disabled={(currentPage > 0) ? false : true} color="primary" onClick={prevPage}>Previous</Button>
                             <p className={styles.pagination}>{`Displaying ${(currentPage * 8) + 1} to ${(currentPage * 8) + 8} of ${pages.length * 8} Presales`}</p>
-                            <Button className={styles.btn} disabled={(currentPage < pages.length - 1) ? false : true} color="primary" onClick={nextPage}>Next</Button>
+                            <Button className={styles.btn}
+                                style={!(currentPage < pages.length - 1) ? { filter: "brightness(0.5)" } : {}}
+                                disabled={(currentPage < pages.length - 1) ? false : true} color="primary" onClick={nextPage}>Next</Button>
                         </div>
                     </div>
                 </Content>
