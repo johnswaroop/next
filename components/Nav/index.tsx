@@ -24,12 +24,12 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
     const [count, setCount] = useState(0);
     const [dimmer, setDimmer] = useState(false);
 
-    const handleDarkMode = () => {
-        setDarkMode((currentMode: boolean) => {
-            darkModeUtility(currentMode);
-            return !currentMode;
-        })
-    }
+    // const handleDarkMode = () => {
+    //     setDarkMode((currentMode: boolean) => {
+    //         darkModeUtility(currentMode);
+    //         return !currentMode;
+    //     })
+    // }
 
     useEffect(() => {
         setDarkMode((currentMode: boolean) => {
@@ -75,19 +75,19 @@ const Nav: FC<Props> = ({ activeRoute, routes, setDarkMode, darkMode, setIsWalle
                     })
                 }
             </ul>
-            <span className={styles.darkModeIcon} onClick={handleDarkMode}>
+            {/* <span className={styles.darkModeIcon} onClick={handleDarkMode}>
                 {darkMode ?
                     <img src={assets.darkMode} /> :
                     <img src={assets.lightMode} />}
+            </span> */}
+
+            <span className={styles.settings} onClick={() => { setCount(c => ++c); setIsCalculatorVisible((s: any) => { return !s }) }} >
+                {('/home' == router.asPath) && <img src={assets.settings} style={{ transform: `rotate(${60 * count}deg)` }} className={styles.setIcon} />}
             </span>
 
             <Button className={styles.walletBtn} onClick={() => { setIsWalletVisible((s: any) => { return !s }) }}>Connect to wallet</Button>
 
-            {('/home' == router.asPath) && <span className={styles.settings} onClick={() => { setCount(c => ++c); setIsCalculatorVisible((s: any) => { return !s }) }} >
-                <img src={assets.settings} style={{ transform: `rotate(${60 * count}deg)` }} className={styles.setIcon} />
-            </span>}
-
-            <LangPicker></LangPicker>
+            {/* <LangPicker></LangPicker> */}
             {dimmer && <div className={styles.dimmer}
                 onClick={
                     () => {

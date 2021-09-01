@@ -45,7 +45,7 @@ const Home: FC = (props) => {
                     overflow: "hidden",
                     height: "90vh"
                 } : {}}>
-                    <SideNav darkMode={darkMode}></SideNav>
+                    <SideNav darkMode={darkMode} setDarkMode={setDarkMode} ></SideNav>
                     {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
                     {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
                     <PopUp popUpVisible={popUpVisible} setPopUpVisible={setPopUpVisible} />

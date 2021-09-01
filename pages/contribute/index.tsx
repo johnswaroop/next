@@ -141,7 +141,7 @@ const Home: FC = () => {
                 <Content>
                     {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
                     {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
-                    <SideNav darkMode={darkMode}></SideNav>
+                    <SideNav darkMode={darkMode} setDarkMode={setDarkMode}></SideNav>
                     <div className={styles.contribute}>
                         <div className={styles.left}>
                             <div className={styles.warning}>

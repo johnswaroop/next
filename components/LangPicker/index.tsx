@@ -21,9 +21,7 @@ const LangPicker: FC = () => {
 
     return (
         <div className={styles.con}>
-            <div className={styles.langPicker}>
-                <Option index={flagIndex} />
-            </div>
+          
             <div className={styles.dropDown}>
                 {
                     flags.map((f, index) => {
@@ -37,6 +35,9 @@ const LangPicker: FC = () => {
                     })
                 }
 
+            </div>
+            <div className={styles.langPicker}>
+                <Option index={flagIndex} />
             </div>
         </div>
     )

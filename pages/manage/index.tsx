@@ -98,7 +98,7 @@ const Home: FC = () => {
         <Content>
           {isWalletVisible && <ConnectWallet setIsWalletVisible={setIsWalletVisible} />}
           {isCalculatorVisible && <Calculator setIsCalculatorVisible={setIsCalculatorVisible} />}
-          <SideNav darkMode={darkMode}></SideNav>
+          <SideNav darkMode={darkMode} setDarkMode={setDarkMode}></SideNav>
           <div className={styles.manage}>
             <span className={styles.header}>
               <h1>Manage your presale</h1>
