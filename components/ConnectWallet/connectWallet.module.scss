@@ -20,7 +20,6 @@ $pop-up-height: auto;
     opacity: 0;
     animation: appear 0s forwards ease-in-out;
     animation-delay: 0.5s;
-    
 }
 
 .popUp {
@@ -72,14 +71,15 @@ $pop-up-height: auto;
     }
 }
 
-.header{
+.header {
     display: flex;
     height: 4.5rem;
     width: 100%;
-    background-color: #99EFDA;
+    position: relative;
+    background-color: var(--prog-primary);
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.09);
     align-items: center;
-    p{
+    p {
         margin: 0;
         font-family: $font;
         color: var(--highlight-text-color);
@@ -89,22 +89,22 @@ $pop-up-height: auto;
     }
 }
 
-.body{
+.body {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     padding: 2.5rem 2.5rem;
     box-sizing: border-box;
-    .row{
+    .row {
         display: flex;
         justify-content: space-between;
     }
-    img{
+    img {
         height: 4.5rem;
     }
 }
 
-.iconCon{
+.iconCon {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,19 +113,18 @@ $pop-up-height: auto;
     border-radius: 15px;
     padding: 0.5rem;
     cursor: pointer;
-    p{
+    p {
         font-family: $font;
         color: var(--bw-text);
     }
 
-    &:hover{
-        background-color: rgba(128, 128, 128, 0.123)
+    &:hover {
+        background-color: rgba(128, 128, 128, 0.123);
     }
 
-    &:active{
-        background-color: rgba(128, 128, 128, 0.5)
+    &:active {
+        background-color: rgba(128, 128, 128, 0.5);
     }
-
 }
 
 .footer {
@@ -153,17 +152,15 @@ $pop-up-height: auto;
     }
 }
 
-.iconConMore{
+.iconConMore {
     @extend .iconCon;
-    &:hover{
-     background-color: transparent;
+    &:hover {
+        background-color: transparent;
     }
-    &:active{
+    &:active {
         transform: translateY(5%);
     }
 }
-
-
 
 @keyframes appear {
     from {
@@ -171,5 +168,22 @@ $pop-up-height: auto;
     }
     to {
         opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    bottom: 50%;
+    margin: auto 1.5rem;
+    height: 1.35rem;
+
+    &:hover {
+        transform: scale(1.25);
+    }
+
+    &:active {
+        transform: scale(0.9);
     }
 }

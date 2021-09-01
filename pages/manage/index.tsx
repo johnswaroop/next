@@ -192,7 +192,7 @@ const Home: FC = () => {
                     the process or cancel to abort
                   </p>
                   <Button className={styles.btn}>Finalize</Button>
-                  <h5 className={styles.cancel}>Cancel</h5>
+                  <Button className={styles.btnRed}>Cancel</Button>
                 </span>
               </CPanel>
               <CPanel title={"Optional Update Presale"} activePanelNo={ActivePanelNo} panelNo={4} handleExpand={handleExpand}>

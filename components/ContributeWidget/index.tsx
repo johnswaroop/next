@@ -46,7 +46,7 @@ const Calculator: FC<props> = ({ setIsContributeVisible }) => {
                             </span>
                         </div>
                         <div className={styles.sec3}>
-                            <Button className={styles.submitBtnNewRed} color="primary">Cancel</Button>
+                            <Button className={styles.submitBtnNewRed} color="primary" onClick={()=>{setIsContributeVisible((s: any) => { return (!s) });}}>Cancel</Button>
                             <Button className={styles.submitBtnNew} color="primary">Confirm</Button>
                         </div>
                     </span>

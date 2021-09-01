@@ -29,8 +29,8 @@ const InputBox: FC<inputBox> = ({darkMode,placeHolder}) => {
 
 
     return (
-        <div className={inFocus ? styles.tokenInputFocus : styles.tokenInput}>
-            <input type="text" placeholder={placeHolder} value={inPut} onChange={(e) => { handleInput(e) }} onFocus={handleFocus} onBlur={handleFocus} />
+        <div className={inFocus ? styles.tokenInputFocus : styles.tokenInput} style={(inPut == ar[1]) ? {borderColor : "springGreen"} : ((inPut == ar[2]) ? {borderColor : "red"} : {})}> 
+            <input type="text" placeholder={placeHolder} value={inPut}  onChange={(e) => { handleInput(e) }} onFocus={handleFocus} onBlur={handleFocus} />
             {inPut == ar[0] && <img className={styles.loading} src={assets.loading} alt="" />}
             {inPut == ar[1] && <img className={styles.success} src={assets.success} alt="" />}
             {inPut == ar[2] && <img className={styles.failed} src={assets.failed} alt="" />}

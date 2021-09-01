@@ -21,7 +21,12 @@ const PopUp: FC<props> = ({ setIsWalletVisible }) => {
                 <div className={styles.walletCon}>
                     <span className={styles.header}>
                         <p>Connect to Wallet</p>
+                        <img className={styles.close} src={assets.closeToast}
+                            onClick={() => {
+                                setIsWalletVisible((s: any) => { return (!s) });
+                            }} />
                     </span>
+
                     <span className={styles.body}>
                         <div className={styles.row} style={{ marginBottom: "1.5rem" }}>
                             <span className={styles.iconCon}>

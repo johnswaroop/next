@@ -229,8 +229,9 @@
 
         button {
             height: 2rem;
-            background-color: var(--card-btn);
-            border: 0;
+            background-color: var(--bg-panel);
+            border: 2.25px solid var(--btn-border) !important;
+ 
             color: var(--prog-primary-dark);
             border-radius: 20px;
             text-transform: capitalize;

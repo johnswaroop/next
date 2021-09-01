@@ -3,13 +3,13 @@ import React, { FC, useState } from 'react'
 import index from '../SideNav';
 import styles from './langPicker.module.scss'
 
-const flags = [{ name: "German", flag: "./flag.png" }, { name: "USA", flag: "./usa.png" }, { name: "France", flag: "./france.png" }, { name: "India", flag: "./india.png" }]
+const flags = [{ name: "German", flag: "/flag.png" }, { name: "USA", flag: "/usa.png" }, { name: "France", flag: "/france.png" }, { name: "India", flag: "./india.png" }]
 
 const Option: FC<{ index: number }> = ({ index }) => {
     return <>
         <img className={styles.flag} src={flags[index].flag} alt="" />
         <p>{flags[index].name}</p>
-        <img src={"./arrow.png"} alt="" className={styles.arrow} />
+        <img src={"/arrow.png"} alt="" className={styles.arrow} />
     </>
 }
 
