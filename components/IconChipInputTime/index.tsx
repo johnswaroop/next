@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 import assets from '../../assets';
 import styles from './iconChipInputTime.module.scss'
 import { DateTimePicker, MuiPickersUtilsProvider, } from '@material-ui/pickers';
@@ -11,28 +11,61 @@ interface Props {
     value: string,
     darkMode: boolean
 }
-const theme = createTheme({
-    palette: {
-        primary: { main: '#99EFDA' },
-        secondary: { main: '#008A64' }
-    },
-});
 
-const IconChipInput: FC<Props> = ({ title, value, icon ,darkMode}) => {
 
+
+const IconChipInput: FC<Props> = ({ title, value, icon, darkMode }) => {
     const [inFocus, setInFocus] = useState<boolean>(false);
     const [selectedDate, handleDateChange] = useState(null);
     const handleFocus = () => {
         setInFocus(f => !f);
     }
 
+    interface text {
+        primary: string,
+        secondary: string,
+        hint: string
+    }
+
+    let primary, secondary, background;
+
+    let textO: text;
+
+    if (darkMode) {
+        primary = '#8A6CB8';
+        secondary = '#8A6CC9';
+        background = '#22272E';
+        textO = {
+            primary: "#fff",
+            secondary: "#8A6CC9",
+            hint: "#fff"
+        }
+       
+    }
+    else {
+        primary = '#99EFDA';
+        secondary = '#008A64';
+        background = 'white';
+        textO = {
+            primary: "#000",
+            secondary: "#008A64",
+            hint: "#808080"
+        }
+    }
+
+    const theme = createTheme({
+        palette: {
+            primary: { main: primary },
+            secondary: { main: secondary },
+            background: { paper: background },
+            text: { primary: textO.primary, secondary: textO.secondary, hint: textO.hint }
+        }
+    });
+
+
     const [toolTipActive, setToolTipActive] = useState<boolean>(false);
     const infoBoxText: string[] = ['Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sit.', 'new Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sit.',
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sit.', 'new Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sit.'];
-
-
-
-
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sit.', 'new Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sit.'];
 
     return (
         <MuiThemeProvider theme={theme} >
@@ -48,7 +81,7 @@ const IconChipInput: FC<Props> = ({ title, value, icon ,darkMode}) => {
                             <span className={inFocus ? styles.customBorderFocus : styles.customBorder}>
                                 <span></span>
                             </span>
-                            <img src={darkMode ? assets.helpDark : assets.helpLight} className={styles.help} alt="" onMouseOver={()=>{setToolTipActive(true)}} onMouseLeave={()=>{setTimeout(()=>{setToolTipActive(false)},100)}}/>
+                            <img src={darkMode ? assets.helpDark : assets.helpLight} className={styles.help} alt="" onMouseOver={() => { setToolTipActive(true) }} onMouseLeave={() => { setTimeout(() => { setToolTipActive(false) }, 100) }} />
                             {toolTipActive && <ToolTip closeToolTip={() => { setToolTipActive(false) }} infoBoxText={infoBoxText} />}
                         </span>
                     </span>

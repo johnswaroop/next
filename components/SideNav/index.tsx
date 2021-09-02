@@ -48,7 +48,7 @@ const index: FC<Props> = ({ darkMode, setDarkMode }) => {
 
         <div className={styles.sideNav} id={"nav"}>
             <Link href='/home'>
-                <span className={('/home' == router.asPath) ? styles.active : styles.inActive} style={{marginTop:"1.5rem"}}>
+                <span className={('/home' == router.asPath) ? styles.active : styles.inActive} style={{ marginTop: "1.5rem" }}>
                     <img src={!darkMode ? assets.navIcon1 : assets.navIcon1N} alt="" />
                     <p>Create Presale</p>
                 </span>
@@ -66,6 +66,20 @@ const index: FC<Props> = ({ darkMode, setDarkMode }) => {
                 </span>
             </Link>
 
+            <div className={styles.terms}>
+                <Link href='/terms'>
+                    <span className={('/terms' == router.asPath) ? styles.active : styles.inActive}>
+                        <img src={!darkMode ? assets.tc : assets.tcDark} alt="" />
+                        <p>Terms and Conditions</p>
+                    </span>
+                </Link>
+                <Link href='/privacy'>
+                    <span className={('/privacy' == router.asPath) ? styles.active : styles.inActive}>
+                        <img src={!darkMode ? assets.privacy : assets.privacyDark} alt="" />
+                        <p>Privacy Policy</p>
+                    </span>
+                </Link>
+            </div>
             <div className={styles.navBottom}>
                 <span className={styles.darkModeIcon} onClick={handleDarkMode}>
                     {darkMode ?

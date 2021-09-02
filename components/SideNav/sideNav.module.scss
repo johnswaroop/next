@@ -46,6 +46,28 @@
     }
 }
 
+.terms{
+    margin-top: auto;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    span{
+        display: flex;
+        align-items: center;
+        padding-left: 1.2rem;
+        p{
+            font-family: $font;
+            color: var(--text-color);
+            margin-left: 1rem;
+        }
+     
+    }
+
+    img{
+        height: 1.5rem;
+    }
+}
 
 .active {
     @extend .entry;
@@ -74,7 +96,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;
-    margin-top: auto;
+
     margin-bottom: 1rem;
     border-top: 1px solid var(--side-nav-border);
     padding-top: 1rem;

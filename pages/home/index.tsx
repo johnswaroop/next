@@ -36,7 +36,7 @@ const Home: FC = (props) => {
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
     const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
     const [popUpVisible, setPopUpVisible] = useState<boolean>(true);
-
+    
     const { t } = useTranslation()
     return (
         <>

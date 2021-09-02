@@ -9,7 +9,7 @@
     position: fixed;
     z-index: 9000;
     @media only screen and (max-width: 910px) {
-        height: $nav-height;;
+        height: $nav-height;
     }
 }
 
@@ -94,8 +94,12 @@
 .settings {
     @extend .darkModeIcon;
     margin-left: auto;
-    margin-right: 1.25rem;
+    margin-right: 0.7rem;
     cursor: pointer;
+
+    @media only screen and (max-width: 600px) {
+        margin-right: auto;
+    }
 }
 
 .setIcon {
@@ -116,7 +120,6 @@
     @media only screen and (max-width: 1420px) {
         margin-top: $nav-height;
         height: ($content-heigth);
-
     }
 
     @media only screen and (max-width: 600px) {
