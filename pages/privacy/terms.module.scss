@@ -5,7 +5,7 @@ $btnWidth :10rem;
 .terms {
     display: flex;
     flex-direction: column;
-    width: $panel-full-width;
+    width: 70vw;
     border-radius: 15px;
     background-color: var(--bg-panel);
     box-shadow: 10px 4px 50px 10px rgba(0, 0, 0, 0.19);
@@ -54,11 +54,14 @@ $btnWidth :10rem;
         font-family: $font;
         font-weight: 300;
         line-height: 150%;
+        width: 60%;
+        text-align: center;
         color: var(--text-color);
-        
         @media only screen and (max-width: 910px) {
             font-size: 0.8rem;
+            width: 100%;
         }
+        margin:  0 auto;
         
     }
     @media only screen and (max-width: 910px) {

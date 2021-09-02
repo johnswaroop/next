@@ -17,6 +17,7 @@ import { Button } from '@material-ui/core';
 import Calculator from '@/components/Calculator';
 import ToastSuccess from '@/components/ToastSuccess';
 import ToastFailed from '@/components/ToastFailed'
+import assets from '@/assets';
 const routes: string[] = [];
 
 interface Props {
@@ -36,6 +37,7 @@ const Home: FC = (props) => {
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
     const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
     const [popUpVisible, setPopUpVisible] = useState<boolean>(true);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     
     const { t } = useTranslation()
     return (
@@ -44,7 +46,7 @@ const Home: FC = (props) => {
             <div>
                 {/* <ToastSuccess/> */}
                 {/* <ToastFailed /> */}
-                <Content styling={popUpVisible || isWalletVisible || isCalculatorVisible ? {
+                <Content styling={popUpVisible || isWalletVisible || isCalculatorVisible || isLoading ? {
                     overflow: "hidden",
                     maxHeight: "100vh",
                 } : {}}>
@@ -88,8 +90,12 @@ const Home: FC = (props) => {
                             <IconChipInputTime title={t("End at")} value={"1200"} darkMode={darkMode} />
                         </PanelVerticle>
                     </section>
+                    
+                    <Button className={styles.submitBtnNew} color="primary" onClick={()=>{setIsLoading(true)}}>Submit</Button>
 
-                    <Button className={styles.submitBtnNew} color="primary">Submit</Button>
+                    {isLoading && <div className={styles.loader} onClick={()=>{setIsLoading(false)}}>
+                        <img src={assets.loader} alt="" />
+                    </div>}
                 </Content>
             </div>
         </>

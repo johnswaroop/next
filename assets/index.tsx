@@ -37,5 +37,6 @@ const privacyDark: string = '/privacyDark.png'
 const closeToast: string = '/closeToast.svg'
 const minus: string = '/minus.svg'
 const plus: string = '/plus.svg'
+const loader: string = '/loader.gif'
 
-export default { tc, tcDark, privacy, privacyDark, logo, bnbIcon, loading, success, failed, help, close, nextIcon, prevIcon, lightMode, darkMode, instruction, disclaimer, navIcon1, navIcon2, navIcon3, navIcon1N, navIcon2N, navIcon3N, arrowDown, facebook, instagram, telegram, twitter, bnbCircle, w1, w2, w3, w4, settings, helpLight, helpDark, closeToast, minus, plus }
+export default { loader,tc, tcDark, privacy, privacyDark, logo, bnbIcon, loading, success, failed, help, close, nextIcon, prevIcon, lightMode, darkMode, instruction, disclaimer, navIcon1, navIcon2, navIcon3, navIcon1N, navIcon2N, navIcon3N, arrowDown, facebook, instagram, telegram, twitter, bnbCircle, w1, w2, w3, w4, settings, helpLight, helpDark, closeToast, minus, plus }

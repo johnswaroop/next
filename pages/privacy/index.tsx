@@ -33,10 +33,10 @@ const Privacy: FC = () => {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, necessitatibus? Aperiam, magni. Minus, esse quia voluptatum aliquid obcaecati, dignissimos numquam voluptas dolorum, perferendis eius dolor ea neque quisquam libero? Ipsum, illum, quas est vero corrupti cupiditate perspiciatis omnis esse reiciendis dolorem nostrum dolores? Ipsam pariatur dolore cupiditate, minima iusto magni.</p>
                             
                         </span>
-                        <span className={styles.action}>
+                        {/* <span className={styles.action}>
                             <Button className={styles.submitBtnNewRed} color="primary" >Decline</Button>
                             <Button className={styles.submitBtnNew} color="primary">Accept</Button>
-                        </span>
+                        </span> */}
                     </div>
                 </Content>
             </div>
